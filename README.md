@@ -1,6 +1,6 @@
 # portfolio-website
 
-This is a project meant to showcase my portfolio and experiences through an interactive website.
+A project to showcase my portfolio and experiences through an interactive website.
 
 # React + TypeScript + Vite
 
