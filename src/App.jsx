@@ -1,12 +1,24 @@
+/* eslint-disable react/no-unknown-property */
 // import { useState } from 'react'
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
+// import { useLoader } from "@react-three/fiber";
+// import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+import { Environment, OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
+import { Suspense } from "react";
 import "./App.css";
-import World from "./components/World";
+
+// load scene using gltf react component
+import Scene from "./components/Scene";
+
+// load scene using gltf model
+// const Scene = () => {
+//   const gltf = useLoader(GLTFLoader, "./models/cloudStation/scene.gltf");
+//   return <primitive object={gltf.scene} />;
+// };
 
 // Canvas sets up three.js's scene, camera, and renderer
-
 function App() {
   // const [count, setCount] = useState(0)
 
@@ -18,7 +30,13 @@ function App() {
           camera={{ position: [3, 3, 3], fov: 30 }}
           style={{ background: "#ececec" }}
         >
-          <World />
+          <Suspense fallback={null}>
+            <Scene />
+            <OrbitControls />
+            <ambientLight intensity={0.5} />
+            <Environment preset="night" background />
+          </Suspense>
+          {/* <World /> */}
         </Canvas>
       </div>
 
