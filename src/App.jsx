@@ -5,13 +5,19 @@ import { Canvas } from "@react-three/fiber";
 import "./App.css";
 import World from "./components/World";
 
+// Canvas sets up three.js's scene, camera, and renderer
+
 function App() {
   // const [count, setCount] = useState(0)
 
   return (
     <>
       <div className="canvas-container">
-        <Canvas shadows camera={{ position: [3, 3, 3], fov: 30 }}>
+        <Canvas
+          shadows
+          camera={{ position: [3, 3, 3], fov: 30 }}
+          style={{ background: "#ececec" }}
+        >
           <World />
         </Canvas>
       </div>
