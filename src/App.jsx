@@ -1,12 +1,11 @@
 /* eslint-disable react/no-unknown-property */
-// import { useState } from 'react'
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
 // import { useLoader } from "@react-three/fiber";
 // import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-import { Environment, OrbitControls } from "@react-three/drei";
+import { CameraControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
-import { Suspense } from "react";
+import { Suspense, useRef, useState } from "react";
 import "./App.css";
 
 // load scene using gltf react component
@@ -20,21 +19,25 @@ import Scene from "./components/Scene";
 
 // Canvas sets up three.js's scene, camera, and renderer
 function App() {
-  // const [count, setCount] = useState(0)
+  // view/portal the camera should be at
+  const [view, setView] = useState("");
+
+  // reference for camera controls
+  const controlsRef = useRef();
 
   return (
     <>
       <div className="canvas-container">
-        <Canvas
-          shadows
-          camera={{ position: [3, 3, 3], fov: 30 }}
-          style={{ background: "#ececec" }}
-        >
+        <Canvas shadows camera={{ position: [4, -1, 10], fov: 30 }}>
           <Suspense fallback={null}>
-            <Scene />
-            <OrbitControls />
-            <ambientLight intensity={0.5} />
-            <Environment preset="night" background />
+            <Scene position-y={-2} position-z={1} />
+            <CameraControls
+              ref={controlsRef}
+              minPolarAngle={(Math.PI * 60) / 360}
+              maxPolarAngle={(Math.PI * 207) / 360}
+            />
+            {/* <ambientLight intensity={0.5} />
+            <Environment preset="dawn" background /> */}
           </Suspense>
           {/* <World /> */}
         </Canvas>

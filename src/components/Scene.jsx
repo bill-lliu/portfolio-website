@@ -8,26 +8,25 @@ Title: Cloud Station
 */
 
 import { useAnimations, useGLTF } from "@react-three/drei";
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 
-const Model = (props) => {
+const Scene = (props) => {
   const group = useRef();
   const { nodes, materials, animations } = useGLTF(
     "./models/cloudStation/scene.gltf"
   );
   const { actions } = useAnimations(animations, group);
+
+  useEffect(() => {
+    actions["Take 001"].reset().fadeIn(0.5).play();
+    return () => actions["Take 001"].fadeOut(0.5);
+  }, []);
+
   return (
     <group ref={group} {...props} dispose={null}>
       <group name="Sketchfab_Scene">
-        <group
-          name="Sketchfab_model"
-          rotation={[-Math.PI / 2, 0, 0]}
-          scale={0.401}
-        >
-          <group
-            name="f2aeabd0fe4a43bda9a61acf7a5a4134fbx"
-            rotation={[Math.PI / 2, 0, 0]}
-          >
+        <group name="Sketchfab_model" scale={0.4}>
+          <group name="f2aeabd0fe4a43bda9a61acf7a5a4134fbx">
             <group name="Object_2">
               <group name="RootNode">
                 <group name="Object_4">
@@ -1147,4 +1146,4 @@ const Model = (props) => {
 
 useGLTF.preload("./models/cloudStation/scene.gltf");
 
-export default Model;
+export default Scene;
