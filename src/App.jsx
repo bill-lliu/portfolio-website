@@ -33,8 +33,12 @@ function App() {
             <Scene position-y={-2} position-z={1} />
             <CameraControls
               ref={controlsRef}
-              minPolarAngle={(Math.PI * 60) / 360}
-              maxPolarAngle={(Math.PI * 207) / 360}
+              minDistance={3}
+              maxDistance={12}
+              minPolarAngle={Math.PI * (60 / 360)}
+              maxPolarAngle={Math.PI * (207 / 360)}
+              minAzimuthAngle={Math.PI * (-100 / 360)}
+              maxAzimuthAngle={Math.PI * (120 / 360)}
             />
             {/* <ambientLight intensity={0.5} />
             <Environment preset="dawn" background /> */}
