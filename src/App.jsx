@@ -28,13 +28,13 @@ function App() {
   return (
     <>
       <div className="canvas-container">
-        <Canvas shadows camera={{ position: [4, -1, 10], fov: 30 }}>
+        <Canvas shadows camera={{ position: [4, -2, 8.5], fov: 30 }}>
           <Suspense fallback={null}>
             <Scene position-y={-2} position-z={1} />
             <CameraControls
               ref={controlsRef}
               minDistance={3}
-              maxDistance={12}
+              maxDistance={10}
               minPolarAngle={Math.PI * (60 / 360)}
               maxPolarAngle={Math.PI * (207 / 360)}
               minAzimuthAngle={Math.PI * (-100 / 360)}
