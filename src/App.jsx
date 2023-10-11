@@ -5,11 +5,11 @@
 // import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { CameraControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
-import { Suspense, useRef, useState } from "react";
+import { Suspense, useEffect, useRef, useState } from "react";
 import "./App.css";
 
 // load scene using gltf react component
-import Scene from "./components/Scene";
+import CloudStation from "./components/CloudStation";
 
 // load scene using gltf model
 // const Scene = () => {
@@ -21,16 +21,23 @@ import Scene from "./components/Scene";
 function App() {
   // view/portal the camera should be at
   const [view, setView] = useState("");
-
   // reference for camera controls
   const controlsRef = useRef();
+  useEffect(() => {
+    // // default homepage view of website
+    // if (view === "") {
+    //   const target = new THREE.Vector3();
+    //   controlsRef.current.target.set(0, -2, 1);
+    //   controlsRef.current.update();
+    // }
+  }, [view]);
 
   return (
     <>
       <div className="canvas-container">
         <Canvas shadows camera={{ position: [4, -2, 8.5], fov: 30 }}>
           <Suspense fallback={null}>
-            <Scene position-y={-2} position-z={1} />
+            <CloudStation position-y={-2} position-z={1} />
             <CameraControls
               ref={controlsRef}
               minDistance={3}
