@@ -5,39 +5,52 @@
 // import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { CameraControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
+// import { Canvas, useThree } from "@react-three/fiber";
 import { Suspense, useEffect, useRef, useState } from "react";
+// import * as THREE from "three";
 import "./App.css";
 
 // load scene using gltf react component
 import CloudStation from "./components/CloudStation";
-
 // load scene using gltf model
 // const Scene = () => {
 //   const gltf = useLoader(GLTFLoader, "./models/cloudStation/scene.gltf");
 //   return <primitive object={gltf.scene} />;
 // };
 
-// Canvas sets up three.js's scene, camera, and renderer
 function App() {
   // view/portal the camera should be at
-  const [view, setView] = useState("");
-  // reference for camera controls
+  const [view, setView] = useState(null);
+  // scene and reference for camera controls
   const controlsRef = useRef();
+  // const scene = useThree((state) => state.scene);
   useEffect(() => {
-    // // default homepage view of website
-    // if (view === "") {
-    //   const target = new THREE.Vector3();
-    //   controlsRef.current.target.set(0, -2, 1);
-    //   controlsRef.current.update();
-    // }
+    //   // default homepage view of website
+    //   if (view) {
+    //     const target = new THREE.Vector3();
+    //     scene.getObjectByName(view).getWorldPosition(target);
+    //     controlsRef.current.setLookAt(
+    //       0,
+    //       0,
+    //       4,
+    //       target.x,
+    //       target.y,
+    //       target.z,
+    //       true
+    //     );
+    //     // controlsRef.current.update();
+    //   } else {
+    //     controlsRef.current.setLookAt(6, -4, 20, 0, -4, 2, true);
+    //   }
   }, [view]);
 
+  // Canvas sets up three.js's scene, camera, and renderer
   return (
     <>
       <div className="canvas-container">
         <Canvas shadows camera={{ position: [6, -4, 20], fov: 30 }}>
           <Suspense fallback={null}>
-            <CloudStation position-y={-4} position-z={2} position-x={0} />
+            <CloudStation position-x={0} position-y={-4} position-z={2} />
             <CameraControls
               ref={controlsRef}
               minDistance={12}
