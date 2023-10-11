@@ -19,8 +19,7 @@ const CloudStation = (props) => {
   const { actions } = useAnimations(animations, group);
 
   useEffect(() => {
-    actions["Take 001"].reset().fadeIn(0.5).play();
-    return () => actions["Take 001"].fadeOut(0.5);
+    actions["Take 001"].reset().warp(1.5, 0.2, 5).play();
   }, []);
 
   return (
@@ -29,23 +28,9 @@ const CloudStation = (props) => {
         <group name="Object_4">
           <primitive object={nodes._rootJoint} />
           <group name="EVSB_FISH1EVSB_FISH">
-            <group name="EVSB_FISH1GEO">
-              <group name="EVSB_FISH1body_GEO" />
-              <group name="EVSB_FISH1eye_L_GEO">
-                <group name="EVSB_FISH1eye_L_GEO001" />
-                <group name="EVSB_FISH1pupil_L_GEO" />
-              </group>
-              <group name="EVSB_FISH1eye_R_GEO">
-                <group name="EVSB_FISH1eye_R_GEO001" />
-                <group name="EVSB_FISH1pupil_R_GEO" />
-              </group>
-            </group>
             <group name="EVSB_FISH1JOINTS">
               <group name="Object_340">
                 <primitive object={nodes._rootJoint_1} />
-                <group name="Object_344" />
-                <group name="Object_346" />
-                <group name="Object_348" />
                 <skinnedMesh
                   name="Object_342"
                   geometry={nodes.Object_342.geometry}
@@ -80,23 +65,9 @@ const CloudStation = (props) => {
             </group>
           </group>
           <group name="EVSB_FISH2EVSB_FISH">
-            <group name="EVSB_FISH2GEO">
-              <group name="EVSB_FISH2body_GEO" />
-              <group name="EVSB_FISH2eye_L_GEO">
-                <group name="EVSB_FISH2eye_L_GEO001" />
-                <group name="EVSB_FISH2pupil_L_GEO" />
-              </group>
-              <group name="EVSB_FISH2eye_R_GEO">
-                <group name="EVSB_FISH2eye_R_GEO001" />
-                <group name="EVSB_FISH2pupil_R_GEO" />
-              </group>
-            </group>
             <group name="EVSB_FISH2JOINTS">
               <group name="Object_389">
                 <primitive object={nodes._rootJoint_2} />
-                <group name="Object_393" />
-                <group name="Object_395" />
-                <group name="Object_397" />
                 <skinnedMesh
                   name="Object_391"
                   geometry={nodes.Object_391.geometry}
@@ -131,23 +102,9 @@ const CloudStation = (props) => {
             </group>
           </group>
           <group name="EVSB_FISHEVSB_FISH">
-            <group name="EVSB_FISHGEO">
-              <group name="EVSB_FISHbody_GEO" />
-              <group name="EVSB_FISHeye_L_GEO">
-                <group name="EVSB_FISHeye_L_GEO001" />
-                <group name="EVSB_FISHpupil_L_GEO" />
-              </group>
-              <group name="EVSB_FISHeye_R_GEO">
-                <group name="EVSB_FISHeye_R_GEO001" />
-                <group name="EVSB_FISHpupil_R_GEO" />
-              </group>
-            </group>
             <group name="EVSB_FISHJOINTS">
               <group name="Object_291">
                 <primitive object={nodes._rootJoint_3} />
-                <group name="Object_295" />
-                <group name="Object_297" />
-                <group name="Object_299" />
                 <skinnedMesh
                   name="Object_293"
                   geometry={nodes.Object_293.geometry}
@@ -1011,7 +968,6 @@ const CloudStation = (props) => {
                   material={materials.hill_1_3_MAT}
                 />
               </group>
-              <group name="pCylinder26" />
               <group name="pCylinder27">
                 <mesh
                   name="pCylinder27_hill_1_3_MAT_0"

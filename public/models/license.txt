@@ -1,0 +1,12 @@
+Model Information:
+* title:	Cloud Station
+* adapting author:	Siyi Liu (https://www.linkedin.com/in/bill-lliu/)
+* original author:	Alexa Kruckenberg (https://sketchfab.com/AlexaKruckenberg)
+* original source:	https://sketchfab.com/3d-models/cloud-station-26f81b24d83441ba88c7e80a52adbaaf
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Authors must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Cloud Station" (https://sketchfab.com/3d-models/cloud-station-26f81b24d83441ba88c7e80a52adbaaf) by Alexa Kruckenberg (https://sketchfab.com/AlexaKruckenberg) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

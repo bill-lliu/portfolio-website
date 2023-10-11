@@ -35,17 +35,17 @@ function App() {
   return (
     <>
       <div className="canvas-container">
-        <Canvas shadows camera={{ position: [4, -2, 8.5], fov: 30 }}>
+        <Canvas shadows camera={{ position: [6, -4, 20], fov: 30 }}>
           <Suspense fallback={null}>
-            <CloudStation position-y={-2} position-z={1} />
+            <CloudStation position-y={-4} position-z={2} position-x={0} />
             <CameraControls
               ref={controlsRef}
-              minDistance={3}
-              maxDistance={10}
+              minDistance={12}
+              maxDistance={40}
               minPolarAngle={Math.PI * (60 / 360)}
-              maxPolarAngle={Math.PI * (207 / 360)}
-              minAzimuthAngle={Math.PI * (-100 / 360)}
-              maxAzimuthAngle={Math.PI * (120 / 360)}
+              maxPolarAngle={Math.PI * (205 / 360)}
+              // minAzimuthAngle={Math.PI * (-100 / 360)}
+              // maxAzimuthAngle={Math.PI * (120 / 360)}
             />
             {/* <ambientLight intensity={0.5} />
             <Environment preset="dawn" background /> */}
