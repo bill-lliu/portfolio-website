@@ -11,7 +11,7 @@ import { Suspense, useEffect, useRef, useState } from "react";
 import "./App.css";
 
 // load scene using gltf react component
-import CloudStation from "./components/CloudStation";
+import Scene from "./components/Scene";
 // load scene using gltf model
 // const Scene = () => {
 //   const gltf = useLoader(GLTFLoader, "./models/cloudStation/scene.gltf");
@@ -50,7 +50,7 @@ function App() {
       <div className="canvas-container">
         <Canvas shadows camera={{ position: [6, -4, 20], fov: 30 }}>
           <Suspense fallback={null}>
-            <CloudStation position-x={0} position-y={-4} position-z={2} />
+            <Scene position-x={0} position-y={-4} position-z={2} />
             <CameraControls
               ref={controlsRef}
               minDistance={12}
