@@ -1,7 +1,7 @@
 const Interface = () => {
   return (
     <>
-      <p>Interface</p>
+      <h1 className="text-red-500">Hello world!</h1>
     </>
   );
 };
