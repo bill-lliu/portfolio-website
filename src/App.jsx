@@ -5,7 +5,7 @@ import { Canvas } from "@react-three/fiber";
 import { useState } from "react";
 import "./App.css";
 import Experience from "./components/Experience";
-// import Overlay from "./components/Overlay";
+import Interface from "./components/Interface";
 
 function App() {
   // state for what "page" the user is on
@@ -15,7 +15,7 @@ function App() {
   return (
     <>
       <div className="canvas-container">
-        {/* <Overlay /> */}
+        <Interface />
         <Canvas shadows camera={{ position: [6, -4, 20], fov: 30 }}>
           <Experience view={view} setView={setView} />
         </Canvas>
