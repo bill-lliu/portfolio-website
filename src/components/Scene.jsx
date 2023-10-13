@@ -1079,6 +1079,6 @@ const Scene = (props) => {
   );
 };
 
-useGLTF.preload("./models/cloudStation.gltf");
+useGLTF.preload("./models/scene.gltf");
 
 export default Scene;
