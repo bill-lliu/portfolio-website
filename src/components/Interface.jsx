@@ -11,11 +11,9 @@ const Interface = () => {
           {Object.keys(ScreenViews).map((view) => (
             <Button
               key={view}
-              onClick={() => setScreen(view)}
+              onClick={() => setScreen(ScreenViews[view])}
               variant={screen === view ? "gradient" : "light"}
               gradient={{ from: "violet", to: "grape" }}
-              radius="lg"
-              color="violet"
             >
               <h4>{view}</h4>
             </Button>
