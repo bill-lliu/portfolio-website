@@ -1,5 +1,6 @@
 import { Affix, Button, Stack } from "@mantine/core";
 import { ScreenPositions, useScreenContext } from "../contexts/ScreenContext";
+import About from "./screens/About";
 
 const Interface = () => {
   const { currentScreen, setCurrentScreen, cameraMode, setCameraMode } =
@@ -26,6 +27,11 @@ const Interface = () => {
           ))}
         </Stack>
       </Affix>
+      {currentScreen.name == "About" ? (
+        <Affix position={{ top: 20, left: 50 }}>
+          <About />
+        </Affix>
+      ) : null}
     </>
   );
 };
