@@ -24,7 +24,7 @@ const Experience = () => {
     console.log(screen);
 
     const changeView = async () => {
-      await cameraControlsRef.current.dollyTo(30, true);
+      await cameraControlsRef.current.dollyTo(20, true);
       await cameraControlsRef.current.setLookAt(
         screen.position[0],
         screen.position[1],

@@ -2,13 +2,13 @@ import { createContext, useContext, useState } from "react";
 
 export const ScreenViews = {
   Home: { position: [6, -4, 20], target: [0, 0, 0] },
-  About: { position: [1.2, -1.4, 7.6], target: [0, -2.3, 2] },
+  About: { position: [1.2, -1.4, 7.6], target: [0, -2.4, 2] },
   // Timeline: "Timeline",
   // Experience: "Experience",
-  Projects: { position: [-4, 4, 2], target: [-4, 4, -10] },
+  Projects: { position: [-4, 4, 2], target: [-4, 4, -4] },
   // Resume: "Resume",
   // Services: "Services",
-  Contact: { position: [2.8, 3.5, -2], target: [2.8, 4.5, -10] },
+  Contact: { position: [2.8, 3.4, -2], target: [2.8, 4.4, -8] },
   // Socials: "Socials",
 };
 
