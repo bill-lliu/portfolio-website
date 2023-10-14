@@ -1,18 +1,24 @@
 import { Affix, Button, Stack } from "@mantine/core";
-import { ScreenViews, useScreenContext } from "../contexts/ScreenContext";
+import { ScreenPositions, useScreenContext } from "../contexts/ScreenContext";
 
 const Interface = () => {
-  const { screen, setScreen, cameraMode, setCameraMode } = useScreenContext();
+  const { currentScreen, setCurrentScreen, cameraMode, setCameraMode } =
+    useScreenContext();
+
+  // console.log("currentScreen: ", currentScreen);
+  // console.log("ScreenPositions: ", ScreenPositions);
+  // Object.keys(ScreenPositions).map(() => console.log(currentScreen.name));
+  // Object.keys(ScreenPositions).map((view) => console.log(view));
 
   return (
     <>
       <Affix position={{ top: 20, right: 20 }}>
         <Stack>
-          {Object.keys(ScreenViews).map((view) => (
+          {Object.keys(ScreenPositions).map((view) => (
             <Button
               key={view}
-              onClick={() => setScreen(ScreenViews[view])}
-              variant={screen === view ? "gradient" : "light"}
+              onClick={() => setCurrentScreen(ScreenPositions[view])}
+              variant={currentScreen.name == view ? "gradient" : "light"}
               gradient={{ from: "violet", to: "grape" }}
             >
               <h4>{view}</h4>

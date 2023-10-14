@@ -1,11 +1,12 @@
 import { CameraControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
-import { Suspense, useEffect, useRef, useState } from "react";
+import { Suspense, useEffect, useRef } from "react";
 import { useScreenContext } from "../contexts/ScreenContext";
 import Scene from "./Scene";
 
 const Experience = () => {
-  const { screen, setScreen, cameraMode, setCameraMode } = useScreenContext();
+  const { currentScreen, setCurrentScreen, cameraMode, setCameraMode } =
+    useScreenContext();
 
   // reference used for position and view target of the camera
   const cameraControlsRef = useRef();
@@ -14,30 +15,23 @@ const Experience = () => {
   // const [target, setTarget] = useState([0, 0, 0]); // default camera target
   // const scene = useThree((state) => state.scene);
 
-  // [x_pos, y_pos, z_pos, x_target, y_target, z_target]
-  const [currentScreen, setCurrentScreen] = useState({
-    position: [6, -4, 20],
-    target: [0, 0, 0],
-  });
-
   useEffect(() => {
-    console.log(screen);
-
+    // async function to force animation finish
     const changeView = async () => {
       await cameraControlsRef.current.dollyTo(20, true);
       await cameraControlsRef.current.setLookAt(
-        screen.position[0],
-        screen.position[1],
-        screen.position[2],
-        screen.target[0],
-        screen.target[1],
-        screen.target[2],
+        currentScreen.position[0],
+        currentScreen.position[1],
+        currentScreen.position[2],
+        currentScreen.target[0],
+        currentScreen.target[1],
+        currentScreen.target[2],
         true
       );
       // cameraControlsRef.current.update();
     };
     changeView();
-  }, [screen]);
+  }, [currentScreen]);
 
   const Loading = () => {
     return <p>loading...</p>;
