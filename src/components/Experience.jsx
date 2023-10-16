@@ -1,6 +1,6 @@
-import { CameraControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
-import { Suspense, useEffect, useRef } from "react";
+import { Suspense } from "react";
+import CameraController from "../contexts/CameraController";
 import { useScreenContext } from "../contexts/ScreenContext";
 import Scene from "./Scene";
 
@@ -8,49 +8,15 @@ const Experience = () => {
   const { currentScreen, setCurrentScreen, cameraMode, setCameraMode } =
     useScreenContext();
 
-  // reference used for position and view target of the camera
-  const cameraControlsRef = useRef();
-  // [x = left/right, y = up/down, z = front/back]
-  // const [position, setPosition] = useState([6, -4, 20]); // default camera position
-  // const [target, setTarget] = useState([0, 0, 0]); // default camera target
-  // const scene = useThree((state) => state.scene);
-
-  useEffect(() => {
-    // async function to force animation finish
-    const changeView = async () => {
-      await cameraControlsRef.current.dollyTo(20, true);
-      await cameraControlsRef.current.setLookAt(
-        currentScreen.position[0],
-        currentScreen.position[1],
-        currentScreen.position[2],
-        currentScreen.target[0],
-        currentScreen.target[1],
-        currentScreen.target[2],
-        true
-      );
-      // cameraControlsRef.current.update();
-    };
-    changeView();
-  }, [currentScreen]);
-
   const Loading = () => {
     return <p>loading...</p>;
   };
   // Canvas used to set up three.js's scene, camera, and renderer
   return (
-    <Canvas shadows camera={{ position: [6, 0, 20], fov: 30 }}>
+    <Canvas shadows camera={{ position: [6, 0, 20], fov: 30, near: 1.2 }}>
       <Suspense fallback={null}>
         <Scene position-x={0} position-y={-4} position-z={2} />
-        <CameraControls
-          ref={cameraControlsRef}
-          truckSpeed={0} // disables three dimentional movement from right click + drag
-          minDistance={12}
-          maxDistance={40}
-          minPolarAngle={Math.PI * (60 / 360)}
-          maxPolarAngle={Math.PI * (205 / 360)}
-          // minAzimuthAngle={Math.PI * (-100 / 360)}
-          // maxAzimuthAngle={Math.PI * (120 / 360)}
-        />
+        <CameraController />
         {/* <ambientLight intensity={0.5} />
             <Environment preset="dawn" background /> */}
       </Suspense>
