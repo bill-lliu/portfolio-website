@@ -1,7 +1,7 @@
 import { Affix, Stack, Text, Title } from "@mantine/core";
 
 const About = () => {
-  // const { currentScreen, setCurrentScreen, cameraMode, setCameraMode } =
+  // const { currentScreen, setCurrentScreen, currentCameraMode, setCurrentCameraMode } =
   //   useScreenContext();
   // const About = ScreenPositions["About"];
 

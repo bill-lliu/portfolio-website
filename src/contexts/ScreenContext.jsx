@@ -9,20 +9,18 @@ export const useScreenContext = () => {
 
 export const ScreenProvider = ({ children }) => {
   const [currentScreen, setCurrentScreen] = useState(ScreenPositions.Home);
-  const [cameraMode, setCameraMode] = useState(CameraModes.free);
+  const [currentCameraMode, setCurrentCameraMode] = useState(CameraModes.FREE);
 
   return (
     <ScreenContext.Provider
       value={{
         currentScreen,
         setCurrentScreen,
-        cameraMode,
-        setCameraMode,
+        currentCameraMode,
+        setCurrentCameraMode,
       }}
     >
       {children}
     </ScreenContext.Provider>
   );
 };
-
-export default useScreenContext;

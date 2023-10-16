@@ -3,32 +3,60 @@ import { useEffect, useRef } from "react";
 import { useScreenContext } from "./ScreenContext";
 
 export const ScreenPositions = {
-  Home: { name: "Home", position: [6, -4, 20], target: [0, 0, 0] },
-  About: { name: "About", position: [1.2, -1.4, 7.6], target: [0, -2.4, 2] },
+  Home: {
+    name: "Home",
+    position: [6, -4, 20],
+    target: [0, 0, 0],
+  },
+  About: {
+    name: "About",
+    position: [1.2, -1.4, 7.6],
+    target: [0.2, -2.2, 3],
+  },
   // Timeline: "Timeline",
   // Experience: "Experience",
-  Projects: { name: "Projects", position: [-4, 4, 2], target: [-4, 4, -4] },
+  Projects: {
+    name: "Projects",
+    position: [-4, 4, 2],
+    target: [-4, 4, -4],
+  },
   // Resume: "Resume",
   // Services: "Services",
   Contact: {
     name: "Contact",
     position: [2.8, 3.4, -2],
-    target: [2.8, 4.4, -8],
+    target: [2.8, 4.2, -8],
   },
   // Socials: "Socials",
 };
 
 export const CameraModes = {
-  free: "free",
-  locked: "locked",
+  FREE: "FREE",
+  LIMITED: "LIMITED",
+  LOCKED: "LOCKED",
 };
 
 export const CameraController = () => {
   // reference used for position and view target of the camera
   const cameraControlsRef = useRef();
 
-  const { currentScreen, setCurrentScreen, cameraMode, setCameraMode } =
-    useScreenContext();
+  const {
+    currentScreen,
+    setCurrentScreen,
+    currentCameraMode,
+    setCurrentCameraMode,
+  } = useScreenContext();
+
+  //   useFrame(async (state, delta) => {
+  //     if (currentScreen == ScreenPositions.Home) {
+  //       return;
+  //     }
+  //     console.log("State:", state);
+  //     console.log("Delta:", delta);
+  //     console.log("cameraControlsRef:", cameraControlsRef);
+  //     await state.camera.position.lerp(currentScreen.position, 3 * delta);
+  //     await state.camera.target.lerp(currentScreen.target, 3 * delta);
+  //   });
 
   useEffect(() => {
     // async function to force animation finish
@@ -43,7 +71,6 @@ export const CameraController = () => {
         currentScreen.target[2],
         true
       );
-      // cameraControlsRef.current.update();
     };
     changeView();
   }, [currentScreen]);

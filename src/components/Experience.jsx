@@ -2,11 +2,15 @@ import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
 import CameraController from "../contexts/CameraController";
 import { useScreenContext } from "../contexts/ScreenContext";
-import Scene from "./Scene";
+import Scene from "./models/Scene";
 
 const Experience = () => {
-  const { currentScreen, setCurrentScreen, cameraMode, setCameraMode } =
-    useScreenContext();
+  const {
+    currentScreen,
+    setCurrentScreen,
+    currentCameraMode,
+    setCurrentCameraMode,
+  } = useScreenContext();
 
   const Loading = () => {
     return <p>loading...</p>;
@@ -17,7 +21,7 @@ const Experience = () => {
       <CameraController />
       <Suspense fallback={null}>
         <Scene position-x={0} position-y={-4} position-z={2} />
-        <fog attach="fog" args={["#D390F2", 5, 70]} />
+        <fog attach="fog" args={["#D390F2", 15, 75]} />
         {/* <ambientLight intensity={0.5} /> */}
         {/* <Environment preset="dawn" background /> */}
       </Suspense>

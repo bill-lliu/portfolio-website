@@ -4,8 +4,12 @@ import { useScreenContext } from "../contexts/ScreenContext";
 import About from "./screens/About";
 
 const Interface = () => {
-  const { currentScreen, setCurrentScreen, cameraMode, setCameraMode } =
-    useScreenContext();
+  const {
+    currentScreen,
+    setCurrentScreen,
+    currentCameraMode,
+    setCurrentCameraMode,
+  } = useScreenContext();
 
   return (
     <>
@@ -23,11 +27,9 @@ const Interface = () => {
           ))}
         </Stack>
       </Affix>
-      {currentScreen.name == "About" ? (
-        <Affix position={{ top: 20, left: 50 }}>
-          <About />
-        </Affix>
-      ) : null}
+      <Affix position={{ top: 20, left: 50 }}>
+        {currentScreen.name == "About" ? <About /> : null}
+      </Affix>
     </>
   );
 };
