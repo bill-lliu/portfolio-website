@@ -1,15 +1,11 @@
 import { Affix, Button, Stack } from "@mantine/core";
-import { ScreenPositions, useScreenContext } from "../contexts/ScreenContext";
+import { ScreenPositions } from "../contexts/CameraController";
+import { useScreenContext } from "../contexts/ScreenContext";
 import About from "./screens/About";
 
 const Interface = () => {
   const { currentScreen, setCurrentScreen, cameraMode, setCameraMode } =
     useScreenContext();
-
-  // console.log("currentScreen: ", currentScreen);
-  // console.log("ScreenPositions: ", ScreenPositions);
-  // Object.keys(ScreenPositions).map(() => console.log(currentScreen.name));
-  // Object.keys(ScreenPositions).map((view) => console.log(view));
 
   return (
     <>

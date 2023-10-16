@@ -14,11 +14,12 @@ const Experience = () => {
   // Canvas used to set up three.js's scene, camera, and renderer
   return (
     <Canvas shadows camera={{ position: [6, 0, 20], fov: 30, near: 1.2 }}>
+      <CameraController />
       <Suspense fallback={null}>
         <Scene position-x={0} position-y={-4} position-z={2} />
-        <CameraController />
-        {/* <ambientLight intensity={0.5} />
-            <Environment preset="dawn" background /> */}
+        <fog attach="fog" args={["#D390F2", 5, 70]} />
+        {/* <ambientLight intensity={0.5} /> */}
+        {/* <Environment preset="dawn" background /> */}
       </Suspense>
     </Canvas>
   );
