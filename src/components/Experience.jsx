@@ -20,6 +20,7 @@ const Experience = () => {
         <CameraController />
         <Suspense fallback={null}>
           <Scene position-x={0} position-y={-4} position-z={2} />
+          {/* eslint-disable-next-line react/no-unknown-property */}
           <fog attach="fog" args={["#D390F2", 15, 75]} />
           {/* <ambientLight intensity={0.5} /> */}
           {/* <Environment preset="dawn" background /> */}

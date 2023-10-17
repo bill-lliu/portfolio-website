@@ -1,5 +1,6 @@
 import { Affix, Burger, Button, Group, Menu, Stack } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
+import { useProgress } from "@react-three/drei";
 import { ScreenPositions } from "../contexts/CameraController";
 import { useScreenContext } from "../contexts/ScreenContext";
 import About from "./screens/About";
@@ -13,6 +14,7 @@ const Overlay = () => {
     setCurrentCameraMode,
   } = useScreenContext();
   const [menuOpened, { toggle: toggleMenu }] = useDisclosure(false);
+  const { progress } = useProgress();
 
   const Navbar = () => {
     return (
