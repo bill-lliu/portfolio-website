@@ -5,7 +5,6 @@ import { useScreenContext } from "../../contexts/ScreenContext";
 
 const Projects = () => {
   const { currentScreen } = useScreenContext();
-
   const [opened, { open, close }] = useDisclosure(false);
 
   useEffect(() => {
@@ -23,15 +22,10 @@ const Projects = () => {
   return (
     <>
       {opened ? (
-        <Affix
-          position={{ top: "15%", left: "20%" }}
-          w="60%"
-          h="70%"
-          bg="rgba(121, 80, 242, 0.8)"
-        >
-          <Stack>
-            <Title>Projects</Title>
-            <Text>loren ipsum</Text>
+        <Affix className="screen">
+          <Stack gap={0}>
+            <Title className="title">Projects</Title>
+            <Text className="content">loren ipsum</Text>
           </Stack>
         </Affix>
       ) : null}

@@ -42,6 +42,37 @@ button:hover {
 /*  */
 /*  */
 /*  */
+/* frequently used component styling */
+/*  */
+/*  */
+/*  */
+
+/* content displays for screens */
+.screen {
+  z-index: 2;
+  position: absolute;
+  top: 20%;
+  left: 15%;
+  width: 70%;
+  height: 60%;
+  border-radius: 20px;
+  background: rgba(121, 80, 242, 0.7);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.25);
+  animation: fadeIn 1s ease-in-out;
+}
+
+.title {
+  padding: 20px 0px;
+  text-align: center;
+}
+
+.content {
+  padding: 0px 40px;
+}
+/*  */
+/*  */
+/*  */
 /* modal styling */
 /*  */
 /*  */
@@ -50,12 +81,12 @@ button:hover {
 /* styling to fix mantine's modal */
 
 /* .mantine-Modal-root { */
-  /* margin: 0;
+/* margin: 0;
   padding: 0; */
 /* } */
 
 /* .mantine-Modal-inner { */
-  /* margin: 0;
+/* margin: 0;
   padding: 0; */
 /* } */
 
@@ -67,7 +98,7 @@ button:hover {
 }
 
 /* .mantine-Modal-header { */
-  /* margin: 0;
+/* margin: 0;
   padding: 0; */
 /* } */
 
@@ -79,7 +110,7 @@ button:hover {
 }
 
 /* .mantine-Modal-title { */
-  /* margin: 0;
+/* margin: 0;
   padding: 0; */
 /* } */
 
@@ -90,7 +121,7 @@ button:hover {
 }
 
 /* .mantine-Modal-close { */
-  /* margin: 0;
+/* margin: 0;
   padding: 0; */
 /* } */
 
