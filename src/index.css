@@ -42,24 +42,58 @@ button:hover {
 /*  */
 /*  */
 /*  */
+/* modal styling */
+/*  */
+/*  */
+/*  */
+
+/* styling to fix mantine's modal */
+
+/* .mantine-Modal-root	{
+  margin: 0;
+  padding: 0;
+}
+
+.mantine-Modal-inner {
+  margin: 0;
+  padding: 0;
+}
+
+.mantine-Modal-content {
+  margin: 0;
+  padding: 0;
+}
+
+.mantine-Modal-header	{
+  margin: 0;
+  padding: 0;
+} */
+
+.mantine-Modal-body	{
+  /* margin: 0;
+  padding: 0; */
+  overflow: hidden;
+}
+
+
+
+
+/*  */
+/*  */
+/*  */
 /* starting screen animations */
 /*  */
 /*  */
 /*  */
 
-/* overlay to force content on top of canvas */
-.overlay {
-  position: absolute;
-  top: 25%;
-  left: 10%;
-  bottom: 30%;
-  right: 10%;
-  background: #ffffff35;
-  border-radius: 5rem;
-}
-
 /* container for website intro */
 .intro {
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -67,6 +101,14 @@ button:hover {
   text-align: center;
   width: 100%;
   height: 100%;
+  /* background: #ffffff35; */
+  border-radius: 5rem;
+  transition: all 0.4s;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.intro--disappear {
+  z-index: -1;
 }
 
 /* hero text for home screen */
@@ -131,7 +173,7 @@ button:hover {
 }
 
 /* cover fade for easing into seeing model */
-.loader {
+.cover {
   position: absolute;
   top: 0;
   left: 0;
@@ -143,7 +185,7 @@ button:hover {
 }
 
 /* remove cover */
-.loader--disappear {
+.cover--disappear {
   opacity: 0;
   z-index: -1;
 }

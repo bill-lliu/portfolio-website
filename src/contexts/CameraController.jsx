@@ -86,10 +86,10 @@ export const CameraController = () => {
   return (
     <CameraControls
       ref={cameraControlsRef}
-      truckSpeed={0} // disables three dimentional movement from right click + drag
+      //   truckSpeed={0} // disables three dimentional movement from right click + drag
       minDistance={12}
       maxDistance={40}
-      minPolarAngle={Math.PI * (60 / 360)}
+      minPolarAngle={Math.PI * (80 / 360)}
       maxPolarAngle={Math.PI * (205 / 360)}
       // minAzimuthAngle={Math.PI * (-100 / 360)}
       // maxAzimuthAngle={Math.PI * (120 / 360)}

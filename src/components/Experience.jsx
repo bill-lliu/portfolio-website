@@ -1,4 +1,4 @@
-import { Loader } from "@react-three/drei";
+import { Loader, Sky, Stars } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
 import CameraController from "../contexts/CameraController";
@@ -20,10 +20,12 @@ const Experience = () => {
         <CameraController />
         <Suspense fallback={null}>
           <Scene position-x={0} position-y={-4} position-z={2} />
+          {/* <Environment preset="dawn" background> */}
+          {/* <ambientLight intensity={0.5} /> */}
           {/* eslint-disable-next-line react/no-unknown-property */}
           <fog attach="fog" args={["#D390F2", 15, 75]} />
-          {/* <ambientLight intensity={0.5} /> */}
-          {/* <Environment preset="dawn" background /> */}
+          <Sky sunPosition={[0, 50, -100]} />
+          <Stars radius={50} depth={50} count={1000} factor={10} speed={3} />
         </Suspense>
       </Canvas>
       <Loader

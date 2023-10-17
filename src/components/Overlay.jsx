@@ -99,9 +99,7 @@ const Overlay = () => {
 
   return (
     <>
-      <div
-        className={`loader ${progress === 100 ? "loader--disappear" : ""}`}
-      />
+      <div className={`cover ${progress === 100 ? "cover--disappear" : ""}`} />
       {progress === 100 ? (
         <>
           <Navbar zIndex={3} />
