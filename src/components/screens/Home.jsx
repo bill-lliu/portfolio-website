@@ -1,6 +1,6 @@
 import { Affix, Button, Modal, Stack, Title } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useScreenContext } from "../../contexts/ScreenContext";
 
 const Home = () => {
@@ -10,25 +10,39 @@ const Home = () => {
     currentCameraMode,
     setCurrentCameraMode,
   } = useScreenContext();
+  const [opened, { open, close }] = useDisclosure(false);
+  const [showHelpText, setShowHelpText] = useState(false);
 
-  const [opened, { toggle, open, close }] = useDisclosure(false);
-
+  // update screen position
   useEffect(() => {
     if (currentScreen.name == "Home") {
       setTimeout(() => {
         open();
+        console.log("opening ", opened);
       }, 1500);
     } else {
-      setTimeout(() => {
-        close();
-      }, 200);
+      close();
     }
-  }, [currentScreen, open, close]);
+  }, [currentScreen]);
+
+  // hide help text when modal is open
+  useEffect(() => {
+    if (opened == true) {
+      setShowHelpText(false);
+    } else {
+      // show help text after 6 seconds
+      setTimeout(() => {
+        if (opened == false && currentScreen.name == "Home") {
+          setShowHelpText(true);
+        }
+      }, 6000);
+    }
+  }, [opened]);
 
   return (
     <>
       <Modal
-        className={`intro ${opened === false ? "intro--disappear" : ""}`}
+        className={`intro ${opened == false ? "intro--disappear" : ""}`}
         centered
         opened={opened}
         onClose={close}
@@ -46,8 +60,8 @@ const Home = () => {
           Start
         </Button>
       </Modal>
-      {opened === false ? (
-        <Affix position={{ left: "40%", bottom: "15%" }}>
+      {showHelpText == true ? (
+        <Affix position={{ left: "40%", bottom: "15%" }} zIndex={1}>
           <Stack
             gap={0}
             style={{
