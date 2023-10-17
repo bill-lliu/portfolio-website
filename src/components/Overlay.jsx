@@ -86,7 +86,6 @@ const Overlay = () => {
 
   // main content of the overlay component
   const Page = () => {
-    console.log("currentScreen:", currentScreen);
     return (
       <>
         {currentScreen.name == "Home" ? <Home /> : null}

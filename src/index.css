@@ -49,30 +49,49 @@ button:hover {
 
 /* styling to fix mantine's modal */
 
-/* .mantine-Modal-root	{
-  margin: 0;
-  padding: 0;
+.mantine-Modal-root {
+  /* margin: 0;
+  padding: 0; */
 }
 
 .mantine-Modal-inner {
-  margin: 0;
-  padding: 0;
+  /* margin: 0;
+  padding: 0; */
 }
 
 .mantine-Modal-content {
-  margin: 0;
-  padding: 0;
+  /* margin: 0;
+  padding: 0; */
+  background: #ffffff35;
+  animation: fadeIn 2s ease-in-out;
 }
 
-.mantine-Modal-header	{
-  margin: 0;
-  padding: 0;
-} */
+.mantine-Modal-header {
+  /* margin: 0;
+  padding: 0; */
+}
 
-.mantine-Modal-body	{
+.mantine-Modal-overlay {
+  /* margin: 0;
+  padding: 0; */
+  background: #a885f280;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.mantine-Modal-title {
+  /* margin: 0;
+  padding: 0; */
+}
+
+.mantine-Modal-body {
   /* margin: 0;
   padding: 0; */
   overflow: hidden;
+}
+
+.mantine-Modal-close {
+  /* margin: 0;
+  padding: 0; */
 }
 
 

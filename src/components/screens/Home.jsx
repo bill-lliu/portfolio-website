@@ -18,7 +18,6 @@ const Home = () => {
     if (currentScreen.name == "Home") {
       setTimeout(() => {
         open();
-        console.log("opening ", opened);
       }, 1500);
     } else {
       close();
@@ -30,7 +29,7 @@ const Home = () => {
     if (opened == true) {
       setShowHelpText(false);
     } else {
-      // show help text after 6 seconds
+      // show help text after 3 seconds
       setTimeout(() => {
         if (opened == false && currentScreen.name == "Home") {
           setShowHelpText(true);

@@ -1,4 +1,5 @@
 import { CameraControls } from "@react-three/drei";
+import { useFrame } from "@react-three/fiber";
 import { useEffect, useRef } from "react";
 import { useScreenContext } from "./ScreenContext";
 
@@ -48,15 +49,18 @@ export const CameraController = () => {
   } = useScreenContext();
 
   //   useFrame(async (state, delta) => {
-  //     if (currentScreen == ScreenPositions.Home) {
-  //       return;
-  //     }
   //     console.log("State:", state);
   //     console.log("Delta:", delta);
-  //     console.log("cameraControlsRef:", cameraControlsRef);
-  //     await state.camera.position.lerp(currentScreen.position, 3 * delta);
-  //     await state.camera.target.lerp(currentScreen.target, 3 * delta);
   //   });
+
+  // console.log("cameraControlsRef: ", cameraControlsRef);
+  useFrame(() => {
+    if (window.innerWidth < 768) {
+      cameraControlsRef.current.zoomTo(0.7, true);
+    } else {
+      cameraControlsRef.current.zoomTo(1, true);
+    }
+  });
 
   useEffect(() => {
     // async function to force animation finish
