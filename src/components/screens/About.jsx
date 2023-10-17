@@ -48,15 +48,15 @@ const About = () => {
                 </div>
                 <div>
                   <Text>
-                    Hi! My name is Bill, and welcome to the latest iteration of
-                    my website. I&apos;ve always wanted to try a 3D project on
-                    the web, so this refresh seemed like the perfect
-                    opportunity. &#128736;&#65039;
+                    Hi! My name is Bill, and welcome to my latest work in
+                    progress. This refresh is meant to be a personal challenge
+                    to learn & use Blender, 3D Rendering, and web animations.
+                    &#128736;&#65039;
                   </Text>
                   <br />
                   <Text>
-                    This website is still a work in progress, but my most recent
-                    commits can be found at this project&apos;s{" "}
+                    Although this is still a work in progress, the most recent
+                    updates can be found at this project&apos;s{" "}
                     <a
                       href="https://github.com/bill-lliu/portfolio-website"
                       target="_blank"
@@ -69,11 +69,12 @@ const About = () => {
                   <br />
                   <Text>
                     I&apos;m currently a 4B Comp Eng student at the University
-                    of Waterloo, with 7 swe internships under my belt. I have
-                    experience from producing clean, test-driven code at large
-                    multi-billion dollar tech corporations; to prototyping,
-                    iterating, and pivoting products/features at seed-stage
-                    startups of &lt;10 people. &#129489;&#8205;&#128187;
+                    of Waterloo, with 7 swe internships under my belt, and have
+                    a variety of experiences: ranging from producing clean,
+                    test-driven code at large multi-billion dollar tech
+                    corporations; to prototyping, iterating, and pivoting
+                    products/features at seed-stage startups of &lt;10 people.
+                    &#129489;&#8205;&#128187;
                   </Text>
                   <br />
                   <Text>
