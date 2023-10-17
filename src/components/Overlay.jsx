@@ -86,12 +86,12 @@ const Overlay = () => {
   const Page = () => {
     console.log("currentScreen:", currentScreen);
     return (
-      <div className="overlay">
+      <>
         {currentScreen.name == "Home" ? <Home /> : null}
         {currentScreen.name == "About" ? <About /> : null}
         {/* {currentScreen.name == "Projects" ? <Projects /> : null} */}
         {/* {currentScreen.name == "Contact" ? <Contact /> : null} */}
-      </div>
+      </>
     );
   };
 

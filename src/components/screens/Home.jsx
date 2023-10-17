@@ -13,11 +13,12 @@ const Home = () => {
     <div className="overlay" style={{ zIndex: 2 }}>
       <div className="intro">
         <Title className="hero">Bill&apos;s Website</Title>
+        <br />
         <Button
           className="explore"
           variant="gradient"
           gradient={{ from: "violet", to: "grape" }}
-          size="md"
+          size="xl"
         >
           Start
         </Button>

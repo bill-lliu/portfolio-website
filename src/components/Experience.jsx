@@ -27,10 +27,19 @@ const Experience = () => {
         </Suspense>
       </Canvas>
       <Loader
-        containerStyles={{}} // ...container - Flex layout styles
-        innerStyles={{}} // ...inner - Inner container styles
-        barStyles={{}} // ...bar - Loading-bar styles
-        dataStyles={{}} // ...data - Text styles
+        containerStyles={{ background: "#A885F2" }} // Flex layout styles
+        innerStyles={{ width: "40vw", height: "1vh", borderRadius: "1vh" }} // Inner container styles
+        barStyles={{
+          background: "#F2EFBD",
+          width: "40vw",
+          height: "1vh",
+          borderRadius: "1vh",
+        }} // Loading-bar styles
+        dataStyles={{
+          color: "#F2EFBD",
+          fontSize: "2em",
+          fontFamily: "Balsamiq Sans, sans-serif",
+        }} // Text styles
         dataInterpolation={(p) => `Loading ${p.toFixed(2)}%`} // Text
         initialState={(active) => active} // Initial black out state
       />

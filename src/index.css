@@ -46,10 +46,10 @@ button:hover {
 /* overlay to force content on top of canvas */
 .overlay {
   position: absolute;
-  top: 20%;
-  left: 15%;
-  bottom: 25%;
-  right: 15%;
+  top: 25%;
+  left: 10%;
+  bottom: 30%;
+  right: 10%;
   background: #ffffff35;
   border-radius: 5rem;
 }
@@ -60,6 +60,7 @@ button:hover {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  text-align: center;
   width: 100%;
   height: 100%;
 }
@@ -70,7 +71,7 @@ button:hover {
   padding: 0;
   margin: 0;
   color: white;
-  font-size: 6rem;
+  font-size: 5rem;
   letter-spacing: 0.5rem;
   transition: all 0.4s;
   animation: fadeUp 2s ease-in-out;
@@ -88,6 +89,7 @@ button:hover {
   position: relative;
   display: inline-block;
   overflow: hidden;
+  color: #F2EFBD;
   transition: all 0.4s;
   animation: fadeUp 1.2s ease-in-out 1.2s forwards;
   opacity: 0;
@@ -95,7 +97,7 @@ button:hover {
 
 /* text colour changes when hovered */
 .explore:hover {
-  color: #F2EFBD;
+  color: white;
 }
 
 /* bubble to fill the button */
