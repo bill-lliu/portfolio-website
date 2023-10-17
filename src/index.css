@@ -69,10 +69,10 @@ button:hover {
 .screen {
   z-index: 2;
   position: absolute;
-  top: 20%;
-  left: 15%;
-  width: 70%;
-  height: 60%;
+  top: 15%;
+  left: 12.5%;
+  width: 75%;
+  height: 75%;
   border-radius: 20px;
   color: white;
   background: rgba(121, 80, 242, 0.4);
@@ -89,6 +89,13 @@ button:hover {
 
 .content {
   padding: 0px 40px;
+}
+
+.profile_image {
+  width: 120%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
 .contact_list {

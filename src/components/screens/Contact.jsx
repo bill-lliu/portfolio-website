@@ -64,6 +64,7 @@ const Contact = () => {
               </Text>
               <br />
               <br />
+              <br />
               <Text>Other:</Text>
               <br />
               <Text>
