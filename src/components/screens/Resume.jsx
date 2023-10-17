@@ -3,12 +3,12 @@ import { useDisclosure } from "@mantine/hooks";
 import { useEffect } from "react";
 import { useScreenContext } from "../../contexts/ScreenContext";
 
-const Projects = () => {
+const Resume = () => {
   const { currentScreen } = useScreenContext();
   const [opened, { open, close }] = useDisclosure(false);
 
   useEffect(() => {
-    if (currentScreen.name == "Projects") {
+    if (currentScreen.name == "Resume") {
       setTimeout(() => {
         open();
       }, 1500);
@@ -24,7 +24,7 @@ const Projects = () => {
       {opened ? (
         <Affix className="screen">
           <Stack gap={0}>
-            <Title className="title">Projects</Title>
+            <Title className="title">Resume</Title>
             <Text className="content">loren ipsum</Text>
           </Stack>
         </Affix>
@@ -33,4 +33,4 @@ const Projects = () => {
   );
 };
 
-export default Projects;
+export default Resume;

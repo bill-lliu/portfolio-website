@@ -14,15 +14,15 @@ export const ScreenPositions = {
     position: [1.2, -1.4, 7.6],
     target: [0.2, -2.2, 3],
   },
-  // Timeline: "Timeline",
-  // Experience: "Experience",
-  Projects: {
-    name: "Projects",
+  Resume: {
+    name: "Resume",
     position: [-4, 4.2, 2],
     target: [-4, 4.2, -4],
   },
-  // Resume: "Resume",
-  // Services: "Services",
+  // Experience: "Experience",
+  Timeline: "Timeline",
+  Projects: "Projects",
+  Services: "Services",
   Contact: {
     name: "Contact",
     position: [2.8, 3.4, -2],

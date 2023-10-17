@@ -6,7 +6,7 @@ import { useScreenContext } from "../contexts/ScreenContext";
 import About from "./screens/About";
 import Contact from "./screens/Contact";
 import Home from "./screens/Home";
-import Projects from "./screens/Projects";
+import Resume from "./screens/Resume";
 
 const Overlay = () => {
   const { currentScreen, setCurrentScreen } = useScreenContext();
@@ -23,9 +23,14 @@ const Overlay = () => {
             {Object.keys(ScreenPositions).map((view) => (
               <Button
                 key={view}
+                className="navButton"
                 onClick={() => setCurrentScreen(ScreenPositions[view])}
+                color={currentScreen.name == view ? "white" : "#F2EFBD"}
                 variant={currentScreen.name == view ? "gradient" : "light"}
                 gradient={{ from: "violet", to: "grape" }}
+                disabled={
+                  view == "Timeline" || view == "Services" || view == "Projects"
+                }
                 size="md"
               >
                 <h4>{view}</h4>
@@ -87,7 +92,7 @@ const Overlay = () => {
       <>
         {currentScreen.name == "Home" ? <Home /> : null}
         {currentScreen.name == "About" ? <About /> : null}
-        {currentScreen.name == "Projects" ? <Projects /> : null}
+        {currentScreen.name == "Resume" ? <Resume /> : null}
         {currentScreen.name == "Contact" ? <Contact /> : null}
       </>
     );
