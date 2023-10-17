@@ -27,7 +27,18 @@ const Credits = () => {
             <Title className="title">Credits</Title>
             <div className="contact_list">
               <Text>
-                Developed by:{" "}
+                Development:
+                <br />
+                Model web rendering adaptation by{" "}
+                <a
+                  href="https://www.linkedin.com/in/bill-lliu/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Siyi Bill Liu
+                </a>
+                <br />
+                Components and navigation built by{" "}
                 <a
                   href="https://www.linkedin.com/in/bill-lliu/"
                   target="_blank"
@@ -36,17 +47,59 @@ const Credits = () => {
                   Siyi Bill Liu
                 </a>
               </Text>
+
               <br />
+
               <Text>
-                Models and animations by:{" "}
+                Models & Animations:
+                <br />
+                Polygon models by{" "}
                 <a
-                  href="https://www.linkedin.com/in/bill-lliu/"
+                  href="https://poly.pizza/u/Poly%20by%20Google"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  Siyi Liu
+                  Poly by Google
+                </a>{" "}
+                from{" "}
+                <a href="https://poly.pizza/" target="_blank" rel="noreferrer">
+                  poly.pizza
                 </a>
-                ,{" "}
+                <br />
+                Original illustrations and textures by{" "}
+                <a
+                  href="https://www.patreon.com/ellievsbear"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Ellie
+                </a>{" "}
+                at{" "}
+                <a
+                  href="https://www.instagram.com/ellievsbear/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  @ellievsbear
+                </a>{" "}
+                or{" "}
+                <a
+                  href="https://www.ellievsbear.com/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  ellievsbear.com
+                </a>
+                <br />
+                Base model{" "}
+                <a
+                  href="https://sketchfab.com/3d-models/cloud-station-26f81b24d83441ba88c7e80a52adbaaf"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Cloud Station
+                </a>{" "}
+                by{" "}
                 <a
                   href="https://www.linkedin.com/in/alexa-kruckenberg/"
                   target="_blank"
@@ -54,23 +107,52 @@ const Credits = () => {
                 >
                   Alexa Kruckenberg
                 </a>
+                <br />
+                Rigging and animations keyframed by{" "}
+                <a
+                  href="https://www.linkedin.com/in/bill-lliu/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Siyi Liu
+                </a>
               </Text>
+
               <br />
+
               <Text>
-                Inspiration and motivation from:{" "}
+                Special Thanks:
+                <br />
+                Inspiration and motivation from{" "}
+                <a
+                  href="https://www.youtube.com/@WawaSensei"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <i>Wawa Sensei</i>
+                </a>{" "}
+                by{" "}
                 <a
                   href="https://www.linkedin.com/in/wassim-samad/"
                   target="_blank"
                   rel="noreferrer"
                 >
                   Wassim Samad
-                </a>{" "}
+                </a>
+              </Text>
+
+              <br />
+
+              <Text>
+                License:
+                <br />
+                All works under{" "}
                 <a
-                  href="https://www.youtube.com/@WawaSensei"
+                  href="https://creativecommons.org/licenses/by/3.0/"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <i>&#40;Wawa Sensei&#41;</i>
+                  CC-BY
                 </a>
               </Text>
             </div>
