@@ -1,9 +1,11 @@
 :root {
+  width: 100vw;
+  height: 100vh;
+
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
   /* color: rgba(255, 255, 255, 0.87); */
   /* background-color: #242424; */
   background-color: #d9afd9;
@@ -16,15 +18,6 @@
   -webkit-text-size-adjust: 100%;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
 body {
   margin: 0;
   display: flex;
@@ -33,39 +26,163 @@ body {
   min-height: 100vh;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+button {
+  border-radius: 50%;
+  border: 1px solid transparent;
+  cursor: pointer;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
 button:hover {
   border-color: #646cff;
 }
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+
+
+
+
+/*  */
+/* starting screen animations */
+/*  */
+
+/* overlay to force content on top of canvas */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+/* container for website intro */
+.intro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* hero text for home screen */
+.hero {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  color: white;
+  font-size: 8rem;
+  letter-spacing: 0.5rem;
+  transition: all 0.5s ease-in-out;
+  animation: fadeUp 2.5s ease-in-out;
+}
+
+/* move hero text after click */
+.intro--disappear .hero {
+  top: 40px;
+  transform: scale(0.25);
+  transform-origin: center top;
+}
+
+/* explore button */
+.explore {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+  animation: fadeUp 1s ease-in-out 2s forwards;
+  opacity: 0;
+}
+
+/* text colour changes when hovered */
+.explore:hover {
+  color: #F2EFBD;
+}
+
+/* bubble to fill the button */
+.explore:before {
+  content: "";
+  background: #E794F2;
+  position: absolute;
+  width: 0%;
+  bottom: 0;
+  left: 50%;
+  height: 0%;
+  transition: 0.5s ease-in-out;
+  z-index: -1;
+  transform: translateX(-50%) translateY(50%);
+}
+
+/* bubble expands on hover */
+.explore:hover:before {
+  width: 200%;
+  height: 300%;
+  border-radius: 100%;
+}
+
+/* ease out button after click */
+.intro--disappear .explore {
+  animation: fadeOut 1s ease-in-out forwards;
+}
+
+
+
+
+/*  */
+/* mobile view scaling */
+/*  */
+
+@media screen and (max-width: 768px) {
+  .hero {
+    font-size: 3rem;
+    letter-spacing: 0.25rem;
   }
-  a:hover {
-    color: #747bff;
+
+  .intro--disappear .hero {
+    top: 25px;
+    transform: scale(0.5);
+    transform-origin: center top;
   }
-  button {
-    background-color: #f9f9f9;
+}
+
+
+
+
+/*  */
+/* keyframe animations */
+/*  */
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+    filter: blur(10px);
+  }
+
+  100% {
+    opacity: 1;
+    filter: none;
+  }
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
   }
 }

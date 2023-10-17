@@ -3,6 +3,7 @@ import { useDisclosure } from "@mantine/hooks";
 import { ScreenPositions } from "../contexts/CameraController";
 import { useScreenContext } from "../contexts/ScreenContext";
 import About from "./screens/About";
+import Home from "./screens/Home";
 
 const Overlay = () => {
   const {
@@ -82,12 +83,14 @@ const Overlay = () => {
   };
 
   const Viewport = () => {
+    console.log("currentScreen:", currentScreen);
     return (
-      <>
+      <div className="overlay">
+        {currentScreen.name == "Home" ? <Home /> : null}
         {currentScreen.name == "About" ? <About /> : null}
         {/* {currentScreen.name == "Projects" ? <Projects /> : null} */}
         {/* {currentScreen.name == "Contact" ? <Contact /> : null} */}
-      </>
+      </div>
     );
   };
 
