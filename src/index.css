@@ -18,6 +18,14 @@
   -webkit-text-size-adjust: 100%;
 }
 
+a {
+  color: yellow;
+}
+
+a:hover {
+  color: gold;
+}
+
 body {
   margin: 0;
   display: flex;
@@ -56,6 +64,7 @@ button:hover {
   width: 70%;
   height: 60%;
   border-radius: 20px;
+  color: white;
   background: rgba(121, 80, 242, 0.4);
   backdrop-filter: blur(10px);
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
