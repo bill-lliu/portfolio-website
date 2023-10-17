@@ -5,6 +5,7 @@ import { ScreenPositions } from "../contexts/CameraController";
 import { useScreenContext } from "../contexts/ScreenContext";
 import About from "./screens/About";
 import Contact from "./screens/Contact";
+import Credits from "./screens/Credits";
 import Home from "./screens/Home";
 import Resume from "./screens/Resume";
 
@@ -94,6 +95,7 @@ const Overlay = () => {
         {currentScreen.name == "About" ? <About /> : null}
         {currentScreen.name == "Resume" ? <Resume /> : null}
         {currentScreen.name == "Contact" ? <Contact /> : null}
+        {currentScreen.name == "Credits" ? <Credits /> : null}
       </>
     );
   };

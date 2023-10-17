@@ -29,6 +29,11 @@ export const ScreenPositions = {
     target: [2.8, 4.2, -8],
   },
   // Socials: "Socials",
+  Credits: {
+    name: "Credits",
+    position: [6, 0, 20],
+    target: [0, 0, 0],
+  },
 };
 
 export const CameraModes = {
