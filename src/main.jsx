@@ -14,7 +14,10 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         withNormalizeCSS
         defaultColorScheme="light"
         theme={{
-          headings: { fontFamily: "Cabin Sketch, sans-serif" },
+          headings: {
+            fontFamily: "Cabin Sketch, sans-serif",
+            textAlign: "center",
+          },
           // headings: { fontFamily: "Patrick Hand, cursive" },
           fontFamily: "Balsamiq Sans, sans-serif",
           primaryColor: "violet",

@@ -49,15 +49,15 @@ button:hover {
 
 /* styling to fix mantine's modal */
 
-.mantine-Modal-root {
+/* .mantine-Modal-root { */
   /* margin: 0;
   padding: 0; */
-}
+/* } */
 
-.mantine-Modal-inner {
+/* .mantine-Modal-inner { */
   /* margin: 0;
   padding: 0; */
-}
+/* } */
 
 .mantine-Modal-content {
   /* margin: 0;
@@ -66,10 +66,10 @@ button:hover {
   animation: fadeIn 2s ease-in-out;
 }
 
-.mantine-Modal-header {
+/* .mantine-Modal-header { */
   /* margin: 0;
   padding: 0; */
-}
+/* } */
 
 .mantine-Modal-overlay {
   /* margin: 0;
@@ -78,10 +78,10 @@ button:hover {
   animation: fadeIn 1s ease-in-out;
 }
 
-.mantine-Modal-title {
+/* .mantine-Modal-title { */
   /* margin: 0;
   padding: 0; */
-}
+/* } */
 
 .mantine-Modal-body {
   /* margin: 0;
@@ -89,10 +89,10 @@ button:hover {
   overflow: hidden;
 }
 
-.mantine-Modal-close {
+/* .mantine-Modal-close { */
   /* margin: 0;
   padding: 0; */
-}
+/* } */
 
 
 
