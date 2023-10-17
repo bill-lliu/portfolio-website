@@ -39,7 +39,8 @@ const About = () => {
                   >
                     <img
                       className="profile_image"
-                      src="https://media.licdn.com/dms/image/C4D03AQFQDR-27olCgg/profile-displayphoto-shrink_800_800/0/1528225259484?e=1703116800&amp;v=beta&amp;t=7z_zYgBQbBqhf1JZ5DYi-rnCQhODj2da5lf-31oiXcI"
+                      // src="https://lh3.googleusercontent.com/u/0/drive-viewer/AK7aPaDCMRQOM-bkOgOovaano4hqUpcUjWtZ_Ftow18Z3RlV86CYLpghmpGS3enCYglwu5DTmCw17uOhbEYghixlqpltXt1GTQ=w3024-h1718"
+                      src="https://media.licdn.com/dms/image/sync/C4E27AQETAOR5yV0Djg/articleshare-shrink_480/0/1697153704310?e=1698156000&v=beta&t=dNicthtYWtIntoHIqrBz9BY9Zrseqlz-S4LLtEcs6gk"
                       loading="lazy"
                       alt="profile image"
                     />
