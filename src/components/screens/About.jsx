@@ -1,4 +1,5 @@
 import { Affix, Stack, Text, Title } from "@mantine/core";
+import { useDisclosure } from "@mantine/hooks";
 
 const About = () => {
   // const { currentScreen, setCurrentScreen, currentCameraMode, setCurrentCameraMode } =
