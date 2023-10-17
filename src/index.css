@@ -40,7 +40,11 @@ button:hover {
 
 
 /*  */
+/*  */
+/*  */
 /* starting screen animations */
+/*  */
+/*  */
 /*  */
 
 /* overlay to force content on top of canvas */
@@ -126,11 +130,33 @@ button:hover {
   animation: fadeOut 1s ease-in-out forwards;
 }
 
+/* cover fade for easing into seeing model */
+.loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 4;
+  background: #A885F2;
+  transition: opacity 2s ease-in-out;
+}
+
+/* remove cover */
+.loader--disappear {
+  opacity: 0;
+  z-index: -1;
+}
+
 
 
 
 /*  */
+/*  */
+/*  */
 /* mobile view scaling */
+/*  */
+/*  */
 /*  */
 
 @media screen and (max-width: 768px) {
@@ -150,7 +176,11 @@ button:hover {
 
 
 /*  */
+/*  */
+/*  */
 /* keyframe animations */
+/*  */
+/*  */
 /*  */
 
 @keyframes fadeIn {
@@ -183,11 +213,5 @@ button:hover {
   100% {
     opacity: 1;
     filter: none;
-  }
-}
-
-@keyframes rotate {
-  100% {
-    transform: rotate(360deg);
   }
 }

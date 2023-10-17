@@ -16,6 +16,7 @@ const Overlay = () => {
   const [menuOpened, { toggle: toggleMenu }] = useDisclosure(false);
   const { progress } = useProgress();
 
+  // navbar menu component
   const Navbar = () => {
     return (
       <>
@@ -36,7 +37,7 @@ const Overlay = () => {
           </Group>
         </Affix>
 
-        {/* vertical navbar for narrow view */}
+        {/* vertical collapsable navbar for narrow view */}
         <Affix position={{ top: 20, left: 20 }} hiddenFrom="sm">
           <Menu
             opened={menuOpened}
@@ -83,6 +84,7 @@ const Overlay = () => {
     );
   };
 
+  // main content of the overlay component
   const Page = () => {
     console.log("currentScreen:", currentScreen);
     return (
@@ -97,8 +99,15 @@ const Overlay = () => {
 
   return (
     <>
-      <Navbar zIndex={3} />
-      <Page zIndex={2} />
+      <div
+        className={`loader ${progress === 100 ? "loader--disappear" : ""}`}
+      />
+      {progress === 100 ? (
+        <>
+          <Navbar zIndex={3} />
+          <Page zIndex={2} />
+        </>
+      ) : null}
     </>
   );
 };

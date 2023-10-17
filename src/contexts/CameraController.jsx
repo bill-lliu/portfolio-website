@@ -5,7 +5,7 @@ import { useScreenContext } from "./ScreenContext";
 export const ScreenPositions = {
   Home: {
     name: "Home",
-    position: [6, -4, 20],
+    position: [6, 0, 20],
     target: [0, 0, 0],
   },
   About: {
@@ -17,8 +17,8 @@ export const ScreenPositions = {
   // Experience: "Experience",
   Projects: {
     name: "Projects",
-    position: [-4, 4, 2],
-    target: [-4, 4, -4],
+    position: [-4, 4.2, 2],
+    target: [-4, 4.2, -4],
   },
   // Resume: "Resume",
   // Services: "Services",
