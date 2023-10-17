@@ -12,10 +12,9 @@ const Overlay = () => {
     currentCameraMode,
     setCurrentCameraMode,
   } = useScreenContext();
-
   const [menuOpened, { toggle: toggleMenu }] = useDisclosure(false);
 
-  const NavbarMenu = () => {
+  const Navbar = () => {
     return (
       <>
         {/* horizontal navbar for wide view */}
@@ -82,7 +81,7 @@ const Overlay = () => {
     );
   };
 
-  const Viewport = () => {
+  const Page = () => {
     console.log("currentScreen:", currentScreen);
     return (
       <div className="overlay">
@@ -96,8 +95,8 @@ const Overlay = () => {
 
   return (
     <>
-      <NavbarMenu zIndex={3} />
-      <Viewport zIndex={2} />
+      <Navbar zIndex={3} />
+      <Page zIndex={2} />
     </>
   );
 };

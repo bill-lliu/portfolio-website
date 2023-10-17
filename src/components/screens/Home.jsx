@@ -1,4 +1,4 @@
-import { Button } from "@mantine/core";
+import { Button, Title } from "@mantine/core";
 import { useScreenContext } from "../../contexts/ScreenContext";
 
 const Home = () => {
@@ -12,7 +12,7 @@ const Home = () => {
   return (
     <div className="overlay" style={{ zIndex: 2 }}>
       <div className="intro">
-        <h1 className="hero">Bill&apos;s Website</h1>
+        <Title className="hero">Bill&apos;s Website</Title>
         <Button
           className="explore"
           variant="gradient"
