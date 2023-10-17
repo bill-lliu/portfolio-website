@@ -44,7 +44,7 @@ button:hover {
   border-color: #646cff;
 }
 
-.navButton { 
+.nav_button { 
   border: 1px solid #E794F2;
   background-color: #e794f280;
   &:disabled,
@@ -88,6 +88,11 @@ button:hover {
 }
 
 .content {
+  padding: 0px 40px;
+}
+
+.contact_list {
+  text-align: center;
   padding: 0px 40px;
 }
 

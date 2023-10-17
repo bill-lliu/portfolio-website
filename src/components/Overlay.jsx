@@ -23,7 +23,7 @@ const Overlay = () => {
             {Object.keys(ScreenPositions).map((view) => (
               <Button
                 key={view}
-                className="navButton"
+                className="nav_button"
                 onClick={() => setCurrentScreen(ScreenPositions[view])}
                 color={currentScreen.name == view ? "white" : "#F2EFBD"}
                 variant={currentScreen.name == view ? "gradient" : "light"}
