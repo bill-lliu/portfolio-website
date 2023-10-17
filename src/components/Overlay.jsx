@@ -4,7 +4,7 @@ import { ScreenPositions } from "../contexts/CameraController";
 import { useScreenContext } from "../contexts/ScreenContext";
 import About from "./screens/About";
 
-const Interface = () => {
+const Overlay = () => {
   const {
     currentScreen,
     setCurrentScreen,
@@ -99,4 +99,4 @@ const Interface = () => {
   );
 };
 
-export default Interface;
+export default Overlay;

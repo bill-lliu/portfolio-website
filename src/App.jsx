@@ -1,12 +1,12 @@
 import "./App.css";
 import Experience from "./components/Experience";
-import Interface from "./components/Interface";
+import Overlay from "./components/Overlay";
 
 function App() {
   // States of the screen, camera, and dark mode offloaded to context provider
   return (
     <div className="canvas-container">
-      <Interface />
+      <Overlay />
       <Experience />
     </div>
   );
