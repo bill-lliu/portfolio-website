@@ -41,12 +41,7 @@ export const CameraController = () => {
   // reference used for position and view target of the camera
   const cameraControlsRef = useRef();
 
-  const {
-    currentScreen,
-    setCurrentScreen,
-    currentCameraMode,
-    setCurrentCameraMode,
-  } = useScreenContext();
+  const { currentScreen } = useScreenContext();
 
   //   useFrame(async (state, delta) => {
   //     console.log("State:", state);

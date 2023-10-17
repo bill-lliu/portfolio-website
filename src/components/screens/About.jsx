@@ -4,14 +4,9 @@ import { useEffect } from "react";
 import { useScreenContext } from "../../contexts/ScreenContext";
 
 const About = () => {
-  const {
-    currentScreen,
-    setCurrentScreen,
-    currentCameraMode,
-    setCurrentCameraMode,
-  } = useScreenContext();
+  const { currentScreen } = useScreenContext();
 
-  const [opened, { toggle, open, close }] = useDisclosure(false);
+  const [opened, { open, close }] = useDisclosure(false);
 
   useEffect(() => {
     if (currentScreen.name == "About") {

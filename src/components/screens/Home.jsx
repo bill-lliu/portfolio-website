@@ -4,12 +4,7 @@ import { useEffect, useState } from "react";
 import { useScreenContext } from "../../contexts/ScreenContext";
 
 const Home = () => {
-  const {
-    currentScreen,
-    setCurrentScreen,
-    currentCameraMode,
-    setCurrentCameraMode,
-  } = useScreenContext();
+  const { currentScreen } = useScreenContext();
   const [opened, { open, close }] = useDisclosure(false);
   const [showHelpText, setShowHelpText] = useState(false);
 

@@ -2,17 +2,9 @@ import { Loader, Sky, Stars } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
 import CameraController from "../contexts/CameraController";
-import { useScreenContext } from "../contexts/ScreenContext";
 import Scene from "./models/Scene";
 
 const Experience = () => {
-  const {
-    currentScreen,
-    setCurrentScreen,
-    currentCameraMode,
-    setCurrentCameraMode,
-  } = useScreenContext();
-
   // Canvas used to set up three.js's scene, camera, and renderer
   return (
     <>

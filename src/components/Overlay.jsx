@@ -7,12 +7,7 @@ import About from "./screens/About";
 import Home from "./screens/Home";
 
 const Overlay = () => {
-  const {
-    currentScreen,
-    setCurrentScreen,
-    currentCameraMode,
-    setCurrentCameraMode,
-  } = useScreenContext();
+  const { currentScreen, setCurrentScreen } = useScreenContext();
   const [menuOpened, { toggle: toggleMenu }] = useDisclosure(false);
   const { progress } = useProgress();
 
