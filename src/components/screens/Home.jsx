@@ -17,7 +17,7 @@ const Home = () => {
     } else {
       close();
     }
-  }, [currentScreen]);
+  }, [currentScreen, open, close]);
 
   // hide help text when modal is open
   useEffect(() => {
@@ -31,7 +31,27 @@ const Home = () => {
         }
       }, 6000);
     }
-  }, [opened]);
+  }, [opened, currentScreen.name]);
+
+  // instructions for movement that will appear
+  const HelpText = () => {
+    return (
+      <Affix position={{ left: "40%", bottom: "15%" }} zIndex={1}>
+        <Stack
+          gap={0}
+          style={{
+            color: "white",
+            textAlign: "center",
+            userSelect: "none",
+          }}
+        >
+          <i>&lt;- left-click + drag to orbit -&gt;</i>
+          <i>&lt;- scroll-wheel to zoom -&gt;</i>
+          <i>&lt;- right-click + drag to pan -&gt;</i>
+        </Stack>
+      </Affix>
+    );
+  };
 
   return (
     <>
@@ -43,7 +63,6 @@ const Home = () => {
         withCloseButton={false}
       >
         <Title className="hero">Bill&apos;s Website</Title>
-        <br />
         <Button
           className="explore"
           onClick={close}
@@ -54,22 +73,7 @@ const Home = () => {
           Start
         </Button>
       </Modal>
-      {showHelpText == true ? (
-        <Affix position={{ left: "40%", bottom: "15%" }} zIndex={1}>
-          <Stack
-            gap={0}
-            style={{
-              color: "white",
-              textAlign: "center",
-              userSelect: "none",
-            }}
-          >
-            <i>&lt;- left-click + drag to orbit -&gt;</i>
-            <i>&lt;- scroll-wheel up/down to zoom -&gt;</i>
-            <i>&lt;- right-click + drag to pan -&gt;</i>
-          </Stack>
-        </Affix>
-      ) : null}
+      {showHelpText == true ? <HelpText /> : null}
     </>
   );
 };

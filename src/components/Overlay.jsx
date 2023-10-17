@@ -4,6 +4,7 @@ import { useProgress } from "@react-three/drei";
 import { ScreenPositions } from "../contexts/CameraController";
 import { useScreenContext } from "../contexts/ScreenContext";
 import About from "./screens/About";
+import Contact from "./screens/Contact";
 import Home from "./screens/Home";
 import Projects from "./screens/Projects";
 
@@ -81,13 +82,13 @@ const Overlay = () => {
   };
 
   // main content of the overlay component
-  const Page = () => {
+  const Screen = () => {
     return (
       <>
         {currentScreen.name == "Home" ? <Home /> : null}
         {currentScreen.name == "About" ? <About /> : null}
         {currentScreen.name == "Projects" ? <Projects /> : null}
-        {/* {currentScreen.name == "Contact" ? <Contact /> : null} */}
+        {currentScreen.name == "Contact" ? <Contact /> : null}
       </>
     );
   };
@@ -98,7 +99,7 @@ const Overlay = () => {
       {progress === 100 ? (
         <>
           <Navbar zIndex={3} />
-          <Page zIndex={2} />
+          <Screen zIndex={2} />
         </>
       ) : null}
     </>
