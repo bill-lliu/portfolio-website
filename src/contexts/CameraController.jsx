@@ -75,6 +75,14 @@ export const CameraController = () => {
     changeView();
   }, [currentScreen]);
 
+  //   useEffect(() => {
+  //     if (currentCameraMode != CameraModes.FREE) {
+  //       cameraControlsRef.current.enabled = false;
+  //     } else {
+  //       cameraControlsRef.current.enabled = true;
+  //     }
+  //   }, [currentCameraMode]);
+
   return (
     <CameraControls
       ref={cameraControlsRef}

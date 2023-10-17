@@ -12,13 +12,13 @@ const Interface = () => {
     setCurrentCameraMode,
   } = useScreenContext();
 
-  const [menuOpen, { toggle: toggleMenu }] = useDisclosure(false);
+  const [menuOpened, { toggle: toggleMenu }] = useDisclosure(false);
 
   const NavbarMenu = () => {
     return (
       <>
         {/* horizontal navbar for wide view */}
-        <Affix zIndex={2} position={{ top: 20, left: 20 }} visibleFrom="sm">
+        <Affix position={{ top: 20, left: 20 }} visibleFrom="sm">
           <Group position="center">
             {Object.keys(ScreenPositions).map((view) => (
               <Button
@@ -35,9 +35,9 @@ const Interface = () => {
         </Affix>
 
         {/* vertical navbar for narrow view */}
-        <Affix zIndex={2} position={{ top: 20, left: 20 }} hiddenFrom="sm">
+        <Affix position={{ top: 20, left: 20 }} hiddenFrom="sm">
           <Menu
-            opened={menuOpen}
+            opened={menuOpened}
             position="bottom-start"
             transitionProps={{
               transition: "slide-down",
@@ -48,7 +48,7 @@ const Interface = () => {
           >
             <Menu.Target>
               <Burger
-                opened={menuOpen}
+                opened={menuOpened}
                 onClick={toggleMenu}
                 color="violet"
                 transitionDuration={400}
@@ -93,8 +93,8 @@ const Interface = () => {
 
   return (
     <>
-      <NavbarMenu />
-      <Viewport />
+      <NavbarMenu zIndex={3} />
+      <Viewport zIndex={2} />
     </>
   );
 };
