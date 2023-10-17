@@ -8,7 +8,9 @@ export const useScreenContext = () => {
 };
 
 export const ScreenProvider = ({ children }) => {
+  // state is a screen object
   const [currentScreen, setCurrentScreen] = useState(ScreenPositions.Home);
+  // state is a string
   const [currentCameraMode, setCurrentCameraMode] = useState(CameraModes.FREE);
 
   return (
