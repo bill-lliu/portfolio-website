@@ -36,7 +36,6 @@ body {
 
 button {
   border-radius: 50%;
-  border: 1px solid transparent;
   cursor: pointer;
 }
 
@@ -45,8 +44,8 @@ button:hover {
 }
 
 .nav_button { 
-  border: 1px solid #E794F2;
-  background-color: #e794f280;
+  border: 2px solid #E794F2;
+  background-color: #cb13fe80;
   &:disabled,
   &[data-disabled] {
     color: gray;
@@ -226,7 +225,7 @@ button:hover {
   position: relative;
   overflow: hidden;
   color: #F2EFBD;
-  border: 1px solid #E794F2;
+  border: 2px solid #E794F2;
   transition: all 0.4s;
   animation: fadeUp 1.2s ease-in-out 1.2s forwards;
   opacity: 0;

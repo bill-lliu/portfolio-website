@@ -29,7 +29,7 @@ const Credits = () => {
               <Text>
                 Development:
                 <br />
-                Model web rendering adaptation by{" "}
+                Website built by{" "}
                 <a
                   href="https://www.linkedin.com/in/bill-lliu/"
                   target="_blank"
@@ -38,7 +38,7 @@ const Credits = () => {
                   Siyi Bill Liu
                 </a>
                 <br />
-                Components and navigation built by{" "}
+                Model web rendering adaptation by{" "}
                 <a
                   href="https://www.linkedin.com/in/bill-lliu/"
                   target="_blank"

@@ -28,7 +28,7 @@ const Overlay = () => {
                 onClick={() => setCurrentScreen(ScreenPositions[view])}
                 color={currentScreen.name == view ? "white" : "#F2EFBD"}
                 variant={currentScreen.name == view ? "gradient" : "light"}
-                gradient={{ from: "violet", to: "grape" }}
+                gradient={{ from: "purple", to: "violet" }}
                 disabled={
                   view == "Timeline" || view == "Services" || view == "Projects"
                 }
@@ -71,9 +71,16 @@ const Overlay = () => {
                 {Object.keys(ScreenPositions).map((view) => (
                   <Button
                     key={view}
+                    className="nav_button"
                     onClick={() => setCurrentScreen(ScreenPositions[view])}
+                    color={currentScreen.name == view ? "white" : "#F2EFBD"}
                     variant={currentScreen.name == view ? "gradient" : "light"}
                     gradient={{ from: "violet", to: "grape" }}
+                    disabled={
+                      view == "Timeline" ||
+                      view == "Services" ||
+                      view == "Projects"
+                    }
                     size="md"
                   >
                     <h4>{view}</h4>
