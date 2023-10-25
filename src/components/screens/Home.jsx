@@ -16,27 +16,32 @@ const Home = () => {
       }, 1500);
     } else {
       close();
+      setShowHelpText(false);
     }
   }, [currentScreen, open, close]);
 
-  // hide help text when modal is open
-  useEffect(() => {
-    if (opened == true) {
-      setShowHelpText(false);
-    } else {
-      // show help text after 3 seconds
-      setTimeout(() => {
-        if (opened == false && currentScreen.name == "Home") {
-          setShowHelpText(true);
-        }
-      }, 6000);
-    }
-  }, [opened, currentScreen.name]);
+  // // hide help text when modal is open
+  // useEffect(() => {
+  //   if (opened == true) {
+  //     setShowHelpText(false);
+  //   } else {
+  //     // show help text after 3 seconds
+  //     setTimeout(() => {
+  //       if (opened == false && currentScreen.name == "Home") {
+  //         setShowHelpText(true);
+  //       }
+  //     }, 6000);
+  //   }
+  // }, [opened, currentScreen.name]);
 
   // instructions for movement that will appear
   const HelpText = () => {
     return (
-      <Affix position={{ left: "40%", bottom: "15%" }} zIndex={1}>
+      <Affix
+        className="helptext"
+        position={{ left: "40%", bottom: "15%" }}
+        zIndex={1}
+      >
         <Stack
           gap={0}
           style={{
@@ -65,7 +70,10 @@ const Home = () => {
         <Title className="hero">Bill&apos;s Website</Title>
         <Button
           className="explore"
-          onClick={close}
+          onClick={() => {
+            close();
+            setShowHelpText(true);
+          }}
           variant="gradient"
           gradient={{ from: "violet", to: "grape" }}
           size="xl"

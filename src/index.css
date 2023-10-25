@@ -194,8 +194,8 @@ button:hover {
   height: 100%;
   /* background: #ffffff35; */
   border-radius: 5rem;
-  transition: all 0.4s;
-  animation: fadeIn 2s ease-in-out;
+  transition: all 0.5s;
+  animation: fadeIn 1s ease-in-out;
 }
 
 .intro--disappear {
@@ -209,8 +209,8 @@ button:hover {
   color: white;
   font-size: 5rem;
   letter-spacing: 0.5rem;
-  transition: all 0.4s;
-  animation: fadeUp 2s ease-in-out;
+  transition: all 0.5s;
+  animation: fadeUp 1.5s ease-in-out;
 }
 
 /* move hero text after click */
@@ -226,8 +226,8 @@ button:hover {
   overflow: hidden;
   color: #F2EFBD;
   border: 2px solid #E794F2;
-  transition: all 0.4s;
-  animation: fadeUp 1.2s ease-in-out 1.2s forwards;
+  transition: all 0.5s;
+  animation: fadeUp 1s ease-in-out 1s forwards;
   opacity: 0;
 }
 
@@ -271,7 +271,7 @@ button:hover {
   right: 0;
   z-index: 4;
   background: #A885F2;
-  transition: opacity 2s ease-in-out;
+  transition: opacity 1s ease-in-out;
 }
 
 /* remove cover */
@@ -280,6 +280,10 @@ button:hover {
   z-index: -1;
 }
 
+/* fade in help text */
+.helptext {
+  animation: fadeIn 2s ease-in-out;
+}
 
 
 
