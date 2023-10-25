@@ -72,6 +72,7 @@ button:hover {
   left: 12.5%;
   width: 75%;
   height: 75%;
+  padding: 20px;
   border-radius: 20px;
   color: white;
   background: rgba(121, 80, 242, 0.4);
@@ -80,14 +81,14 @@ button:hover {
   animation: fadeIn 1s ease-in-out;
 }
 
-.title {
-  padding: 20px 0px;
+.about_title {
   text-align: center;
   text-decoration: underline;
 }
 
-.content {
-  padding: 0px 40px;
+.about_image {
+  max-height: 200px;
+  max-width: 200px;
 }
 
 .profile_image {
@@ -97,9 +98,13 @@ button:hover {
   border-radius: 50%;
 }
 
+.about_text {
+  display: flex;
+  padding: 0px 20px;
+}
+
 .contact_list {
   text-align: center;
-  padding: 0px 40px;
 }
 
 
