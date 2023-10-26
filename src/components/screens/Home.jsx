@@ -64,7 +64,10 @@ const Home = () => {
         className={`intro ${opened == false ? "intro--disappear" : ""}`}
         centered
         opened={opened}
-        onClose={close}
+        onClose={() => {
+          close();
+          setShowHelpText(true);
+        }}
         withCloseButton={false}
       >
         <Title className="hero">Bill&apos;s Website</Title>

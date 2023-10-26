@@ -264,7 +264,7 @@ button:hover {
 
 /* ease out button after click */
 .intro--disappear .explore {
-  animation: fadeOut 1s ease-in-out forwards;
+  animation: fadeOut 2s ease-in-out forwards;
 }
 
 /* cover fade for easing into seeing model */
