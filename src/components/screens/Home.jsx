@@ -11,28 +11,12 @@ const Home = () => {
   // update screen position
   useEffect(() => {
     if (currentScreen.name == "Home") {
-      setTimeout(() => {
-        open();
-      }, 1500);
+      open();
     } else {
       close();
       setShowHelpText(false);
     }
   }, [currentScreen, open, close]);
-
-  // // hide help text when modal is open
-  // useEffect(() => {
-  //   if (opened == true) {
-  //     setShowHelpText(false);
-  //   } else {
-  //     // show help text after 3 seconds
-  //     setTimeout(() => {
-  //       if (opened == false && currentScreen.name == "Home") {
-  //         setShowHelpText(true);
-  //       }
-  //     }, 6000);
-  //   }
-  // }, [opened, currentScreen.name]);
 
   // instructions for movement that will appear
   const HelpText = () => {

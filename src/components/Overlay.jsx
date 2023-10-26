@@ -110,12 +110,12 @@ const Overlay = () => {
   return (
     <>
       <div className={`cover ${progress === 100 ? "cover--disappear" : ""}`} />
-      {progress === 100 ? (
+      {progress === 100 && (
         <>
           <Navbar zIndex={3} />
           <Screen zIndex={2} />
         </>
-      ) : null}
+      )}
     </>
   );
 };
