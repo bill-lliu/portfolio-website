@@ -1,3 +1,4 @@
+import { useProgress } from "@react-three/drei";
 import { createContext, useContext, useEffect, useState } from "react";
 import { CameraModes, ScreenPositions } from "./CameraController";
 
@@ -16,27 +17,32 @@ export const ScreenProvider = ({ children }) => {
   // camera state is a string
   const [currentCameraMode, setCurrentCameraMode] = useState(CameraModes.FREE);
   // audio state is a boolean
-  const [playAudio, setPlayAudio] = useState(true);
+  const [playAudio, setPlayAudio] = useState(false);
   const intro = new Audio("./audio/intro.mp3");
   const loop = new Audio("./audio/loop.mp3");
 
-  // useeffect to start playing audio
-  useEffect(() => {
-    intro.play();
-    intro.addEventListener("ended", () => {
-      loop.play();
-      loop.loop = true;
-    });
-  }, []);
+  // activate global boolean on first user interaction
+  const { progress } = useProgress();
 
-  // useeffect to toggle audio
+  document.body.addEventListener("click", () => {
+    if (progress == 100) {
+      setPlayAudio(true);
+    }
+  });
+
+  // start playing audio on first user interaction
   useEffect(() => {
+    console.log("playAudio change: ", playAudio);
     if (playAudio) {
-      loop.play();
-      loop.loop = true;
+      intro.play();
+      intro.addEventListener("ended", () => {
+        loop.play();
+        loop.loop = true;
+      });
     } else {
       loop.pause();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [playAudio]);
 
   return (
@@ -46,6 +52,8 @@ export const ScreenProvider = ({ children }) => {
         setCurrentScreen,
         currentCameraMode,
         setCurrentCameraMode,
+        playAudio,
+        setPlayAudio,
       }}
     >
       {children}
