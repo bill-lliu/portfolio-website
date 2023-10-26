@@ -56,7 +56,6 @@ const Home = () => {
       >
         <Title className="hero">Bill&apos;s Website</Title>
         <Button
-          className="explore"
           onClick={() => {
             close();
             setShowHelpText(true);
@@ -65,7 +64,7 @@ const Home = () => {
           gradient={{ from: "violet", to: "grape" }}
           size="xl"
         >
-          Start
+          Explore
         </Button>
       </Modal>
       {showHelpText == true ? <HelpText /> : null}

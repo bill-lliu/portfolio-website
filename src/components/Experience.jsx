@@ -1,14 +1,29 @@
-import { Loader, Sky, Stars } from "@react-three/drei";
+import { PositionalAudio, Sky, Stars } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
 import CameraController from "../contexts/CameraController";
+import { useScreenContext } from "../contexts/ScreenContext";
+import LoadingScreen from "./LoadingScreen";
 import Scene from "./models/Scene";
 
 const Experience = () => {
+  const { started } = useScreenContext();
+
   // Canvas used to set up three.js's scene, camera, and renderer
   return (
     <>
       <Canvas shadows camera={{ position: [6, 0, 20], fov: 30, near: 1.2 }}>
+        {/* eslint-disable-next-line react/no-unknown-property */}
+        <group position={[-4, 4.2, -4]}>
+          {started && (
+            <PositionalAudio
+              autoplay
+              loop
+              url="./audio/bgm.mp3"
+              distance={30}
+            />
+          )}
+        </group>
         <CameraController />
         <Suspense fallback={null}>
           <Scene position-x={0} position-y={-4} position-z={2} />
@@ -20,23 +35,7 @@ const Experience = () => {
           <Stars radius={50} depth={50} count={1000} factor={10} speed={3} />
         </Suspense>
       </Canvas>
-      <Loader
-        containerStyles={{ background: "#A885F2" }} // Flex layout styles
-        innerStyles={{ width: "40vw", height: "1vh", borderRadius: "1vh" }} // Inner container styles
-        barStyles={{
-          background: "#F2EFBD",
-          width: "40vw",
-          height: "1vh",
-          borderRadius: "1vh",
-        }} // Loading-bar styles
-        dataStyles={{
-          color: "#F2EFBD",
-          fontSize: "2em",
-          fontFamily: "Balsamiq Sans, sans-serif",
-        }} // Text styles
-        dataInterpolation={(p) => `Loading ${p.toFixed(2)}%`} // Text
-        initialState={(active) => active} // Initial black out state
-      />
+      <LoadingScreen />
     </>
   );
 };

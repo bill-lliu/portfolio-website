@@ -10,7 +10,7 @@ import Home from "./screens/Home";
 import Resume from "./screens/Resume";
 
 const Overlay = () => {
-  const { currentScreen, setCurrentScreen } = useScreenContext();
+  const { started, currentScreen, setCurrentScreen } = useScreenContext();
   const [menuOpened, { toggle: toggleMenu }] = useDisclosure(false);
   const { progress } = useProgress();
 
@@ -109,13 +109,12 @@ const Overlay = () => {
 
   return (
     <>
-      <div className={`cover ${progress === 100 ? "cover--disappear" : ""}`} />
-      {progress === 100 && (
+      {started ? (
         <>
           <Navbar zIndex={3} />
           <Screen zIndex={2} />
         </>
-      )}
+      ) : null}
     </>
   );
 };
