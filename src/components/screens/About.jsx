@@ -34,7 +34,7 @@ const About = () => {
                 <img
                   className="profile_image"
                   // src="https://lh3.googleusercontent.com/u/0/drive-viewer/AK7aPaDCMRQOM-bkOgOovaano4hqUpcUjWtZ_Ftow18Z3RlV86CYLpghmpGS3enCYglwu5DTmCw17uOhbEYghixlqpltXt1GTQ=w3024-h1718"
-                  src="./profile_picture.jpeg"
+                  src="./images/profile_picture.jpeg"
                   loading="lazy"
                   alt="profile image"
                 />

@@ -17,7 +17,7 @@ export default App;
 {
   /* 
 // import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
+// import viteLogo from '/images/vite.svg'
 <div>
   <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
     <img src={viteLogo} className="logo" alt="Vite logo" />
