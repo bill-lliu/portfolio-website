@@ -47,7 +47,7 @@ export const CameraController = () => {
   const cameraControlsRef = useRef();
   const { currentScreen } = useScreenContext();
 
-  const woosh = new Audio("./audio/woosh2.mp3");
+  const woosh = new Audio("./audio/woosh.mp3");
 
   //   useFrame(async (state, delta) => {
   //     console.log("State:", state);
