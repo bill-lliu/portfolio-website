@@ -23,7 +23,7 @@ const Credits = () => {
     <>
       {opened ? (
         <Affix className="screen">
-          <Stack gap={0}>
+          <Stack gap={0} align="center">
             <Title className="title">Credits</Title>
             <div className="contact_list">
               <Text>

@@ -23,7 +23,7 @@ const Resume = () => {
     <>
       {opened ? (
         <Affix className="screen">
-          <Stack gap={0}>
+          <Stack gap={0} align="center">
             <Title className="title">Resume</Title>
             <div className="contact_list">
               <Text>

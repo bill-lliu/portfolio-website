@@ -23,7 +23,7 @@ const Contact = () => {
     <>
       {opened ? (
         <Affix className="screen">
-          <Stack gap={0}>
+          <Stack gap={0} align="center">
             <Title className="title">Contact</Title>
             <div className="contact_list">
               <Text>

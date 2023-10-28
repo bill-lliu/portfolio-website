@@ -28,6 +28,7 @@ const Home = () => {
       >
         <Stack
           gap={0}
+          align="center"
           style={{
             color: "white",
             textAlign: "center",
