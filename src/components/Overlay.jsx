@@ -1,6 +1,5 @@
 import { Affix, Burger, Button, Group, Menu, Stack } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
-import { ScreenPositions } from "../contexts/CameraController";
 import { useScreenContext } from "../contexts/ScreenContext";
 import About from "./screens/About";
 import Contact from "./screens/Contact";
@@ -9,7 +8,8 @@ import Home from "./screens/Home";
 import Resume from "./screens/Resume";
 
 const Overlay = () => {
-  const { started, currentScreen, setCurrentScreen } = useScreenContext();
+  const { started, Screens, currentScreen, setCurrentScreen } =
+    useScreenContext();
   const [menuOpened, { toggle: toggleMenu }] = useDisclosure(false);
 
   // navbar menu component
@@ -19,11 +19,11 @@ const Overlay = () => {
         {/* horizontal navbar for wide view */}
         <Affix position={{ top: 20, left: 20 }} visibleFrom="sm">
           <Group position="center">
-            {Object.keys(ScreenPositions).map((view) => (
+            {Object.keys(Screens).map((view) => (
               <Button
                 key={view}
                 className="nav_button"
-                onClick={() => setCurrentScreen(ScreenPositions[view])}
+                onClick={() => setCurrentScreen(Screens[view])}
                 color={currentScreen.name == view ? "white" : "#F2EFBD"}
                 variant={currentScreen.name == view ? "gradient" : "light"}
                 gradient={{ from: "purple", to: "violet" }}
@@ -66,11 +66,11 @@ const Overlay = () => {
               hiddenFrom="sm"
             >
               <Stack>
-                {Object.keys(ScreenPositions).map((view) => (
+                {Object.keys(Screens).map((view) => (
                   <Button
                     key={view}
                     className="nav_button"
-                    onClick={() => setCurrentScreen(ScreenPositions[view])}
+                    onClick={() => setCurrentScreen(Screens[view])}
                     color={currentScreen.name == view ? "white" : "#F2EFBD"}
                     variant={currentScreen.name == view ? "gradient" : "light"}
                     gradient={{ from: "violet", to: "grape" }}

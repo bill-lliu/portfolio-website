@@ -67,6 +67,8 @@ const Home = () => {
         >
           Explore
         </Button>
+        <br />
+        <br />
       </Modal>
       {showHelpText == true ? <HelpText /> : null}
     </>

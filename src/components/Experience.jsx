@@ -4,6 +4,7 @@ import { Suspense } from "react";
 import CameraController from "../contexts/CameraController";
 import { useScreenContext } from "../contexts/ScreenContext";
 import LoadingScreen from "./LoadingScreen";
+import Portals from "./Portals";
 import Scene from "./models/Scene";
 
 const Experience = () => {
@@ -17,10 +18,10 @@ const Experience = () => {
         <group position={[-4, 4.2, -4]}>
           {started && (
             <PositionalAudio
+              url="./audio/bgm.mp3"
               autoplay
               loop
               setVolume={0.3}
-              url="./audio/bgm.mp3"
               distance={20}
             />
           )}
@@ -28,6 +29,7 @@ const Experience = () => {
         <CameraController />
         <Suspense fallback={null}>
           <Scene position-x={0} position-y={-4} position-z={2} />
+          {/* <Portals /> */}
           {/* <Environment preset="dawn" background> */}
           {/* <ambientLight intensity={0.5} /> */}
           {/* eslint-disable-next-line react/no-unknown-property */}

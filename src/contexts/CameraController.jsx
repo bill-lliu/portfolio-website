@@ -3,45 +3,6 @@ import { useFrame } from "@react-three/fiber";
 import { useEffect, useRef } from "react";
 import { useScreenContext } from "./ScreenContext";
 
-export const ScreenPositions = {
-  Home: {
-    name: "Home",
-    position: [6, 0, 20],
-    target: [0, 0, 0],
-  },
-  About: {
-    name: "About",
-    position: [1.2, -1.4, 7.6],
-    target: [0.2, -2.2, 3],
-  },
-  Resume: {
-    name: "Resume",
-    position: [-4, 4.2, 2],
-    target: [-4, 4.2, -4],
-  },
-  // Experience: "Experience",
-  Timeline: "Timeline",
-  Projects: "Projects",
-  Services: "Services",
-  Contact: {
-    name: "Contact",
-    position: [2.8, 3.4, -2],
-    target: [2.8, 4.2, -8],
-  },
-  // Socials: "Socials",
-  Credits: {
-    name: "Credits",
-    position: [6, 0, 20],
-    target: [0, 0, 0],
-  },
-};
-
-export const CameraModes = {
-  FREE: "FREE",
-  LIMITED: "LIMITED",
-  LOCKED: "LOCKED",
-};
-
 export const CameraController = () => {
   // reference used for position and view target of the camera
   const cameraControlsRef = useRef();
@@ -66,7 +27,7 @@ export const CameraController = () => {
     // async function to force animation finish
     const changeView = async () => {
       woosh.play();
-      await cameraControlsRef.current.dollyTo(20, true);
+      await cameraControlsRef.current.dollyTo(21, true);
       await cameraControlsRef.current.setLookAt(
         currentScreen.position[0],
         currentScreen.position[1],
@@ -78,15 +39,8 @@ export const CameraController = () => {
       );
     };
     changeView();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentScreen]);
-
-  //   useEffect(() => {
-  //     if (currentCameraMode != CameraModes.FREE) {
-  //       cameraControlsRef.current.enabled = false;
-  //     } else {
-  //       cameraControlsRef.current.enabled = true;
-  //     }
-  //   }, [currentCameraMode]);
 
   return (
     <CameraControls
