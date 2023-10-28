@@ -19,8 +19,9 @@ const Experience = () => {
             <PositionalAudio
               autoplay
               loop
+              setVolume={0.3}
               url="./audio/bgm.mp3"
-              distance={30}
+              distance={20}
             />
           )}
         </group>

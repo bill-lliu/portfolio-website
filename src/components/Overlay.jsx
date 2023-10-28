@@ -1,6 +1,5 @@
 import { Affix, Burger, Button, Group, Menu, Stack } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
-import { useProgress } from "@react-three/drei";
 import { ScreenPositions } from "../contexts/CameraController";
 import { useScreenContext } from "../contexts/ScreenContext";
 import About from "./screens/About";
@@ -12,7 +11,6 @@ import Resume from "./screens/Resume";
 const Overlay = () => {
   const { started, currentScreen, setCurrentScreen } = useScreenContext();
   const [menuOpened, { toggle: toggleMenu }] = useDisclosure(false);
-  const { progress } = useProgress();
 
   // navbar menu component
   const Navbar = () => {

@@ -45,14 +45,14 @@ export const CameraModes = {
 export const CameraController = () => {
   // reference used for position and view target of the camera
   const cameraControlsRef = useRef();
-
   const { currentScreen } = useScreenContext();
+
+  const woosh = new Audio("./audio/woosh.wav");
 
   //   useFrame(async (state, delta) => {
   //     console.log("State:", state);
   //     console.log("Delta:", delta);
   //   });
-
   // console.log("cameraControlsRef: ", cameraControlsRef);
   useFrame(() => {
     if (window.innerWidth < 768) {
@@ -65,6 +65,7 @@ export const CameraController = () => {
   useEffect(() => {
     // async function to force animation finish
     const changeView = async () => {
+      woosh.play();
       await cameraControlsRef.current.dollyTo(20, true);
       await cameraControlsRef.current.setLookAt(
         currentScreen.position[0],
