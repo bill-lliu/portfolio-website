@@ -29,7 +29,7 @@ const Experience = () => {
         <CameraController />
         <Suspense fallback={null}>
           <Scene position-x={0} position-y={-4} position-z={2} />
-          {/* <Portals /> */}
+          <Portals />
           {/* <Environment preset="dawn" background> */}
           {/* <ambientLight intensity={0.5} /> */}
           {/* eslint-disable-next-line react/no-unknown-property */}
