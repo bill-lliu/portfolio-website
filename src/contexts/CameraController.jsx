@@ -15,6 +15,8 @@ export const CameraController = () => {
   //     console.log("Delta:", delta);
   //   });
   // console.log("cameraControlsRef: ", cameraControlsRef);
+
+  // resize camera zoom on window resize
   useFrame(() => {
     if (window.innerWidth < 768) {
       cameraControlsRef.current.zoomTo(0.7, true);

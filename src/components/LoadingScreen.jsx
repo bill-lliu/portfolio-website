@@ -27,7 +27,7 @@ const LoadingScreen = () => {
         }} // Loading-bar styles
         dataStyles={{
           color: "#F2EFBD",
-          fontSize: "2em",
+          fontSize: "1.5em",
           fontFamily: "Balsamiq Sans, sans-serif",
         }} // Text styles
         dataInterpolation={(p) => `Loading ${p.toFixed(2)}%`} // Text
@@ -36,7 +36,16 @@ const LoadingScreen = () => {
 
       <Button
         disabled={progress < 100}
-        style={{ position: "absolute", top: "45%", left: "45%", zIndex: 1001 }}
+        style={{
+          position: "absolute",
+          width: "120px",
+          height: "60px",
+          left: "50%",
+          marginLeft: "-60px",
+          top: "50%",
+          marginTop: "-20px",
+          zIndex: 1002,
+        }}
         className="explore"
         onClick={() => {
           setStarted(true);

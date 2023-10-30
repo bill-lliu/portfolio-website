@@ -23,7 +23,13 @@ const Home = () => {
     return (
       <Affix
         className="helptext"
-        position={{ left: "40%", bottom: "15%" }}
+        // position={{ left: "40%", bottom: "15%" }}
+        style={{
+          width: "400px",
+          left: "50%",
+          marginLeft: "-200px",
+          bottom: "15%",
+        }}
         zIndex={1}
       >
         <Stack
