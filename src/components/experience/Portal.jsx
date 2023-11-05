@@ -1,12 +1,17 @@
 /* eslint-disable react/no-unknown-property */
 import { Float, RoundedBox, Sparkles, Text } from "@react-three/drei";
+import { useEffect, useState } from "react";
 import * as THREE from "three";
 import { useScreenContext } from "../../contexts/ScreenContext";
 
 // each portal is a clickable square to jump the camera to that screen
 // eslint-disable-next-line react/prop-types
-const Portal = ({ view, hovered, setHovered }) => {
+const Portal = ({ view }) => {
   const { Screens, setCurrentScreen } = useScreenContext();
+  const [hovered, setHovered] = useState(false);
+  useEffect(() => {
+    document.body.style.cursor = hovered ? "pointer" : "auto";
+  }, [hovered]);
 
   return (
     <group>
@@ -27,17 +32,17 @@ const Portal = ({ view, hovered, setHovered }) => {
             // rotation={[Math.PI / 2, 0, 0]}
             // args={[1.5, 1.5, 0.3]}
             args={[3, 3, 0.3]}
-            radius={0.15}
+            radius={hovered ? 0.3 : 0.15}
             onClick={() => {
               console.log(view);
               setCurrentScreen(Screens[view]);
             }}
           >
             <meshBasicMaterial
-              color="#F2EFBD"
-              side={THREE.DoubleSide}
+              color={hovered ? "#D5C29E" : "#F2EFBD"}
               transparent
               opacity={0.4}
+              side={THREE.DoubleSide}
             />
             <Text
               position={[0, 0, 0.151]}
@@ -46,7 +51,7 @@ const Portal = ({ view, hovered, setHovered }) => {
               maxWidth={3}
               fontSize={0.7}
               font={"./fonts/Cabin_Sketch/CabinSketch-Bold.ttf"}
-              color={"purple"}
+              color={hovered ? "#3D0773" : "#800080"}
             >
               {view}
             </Text>

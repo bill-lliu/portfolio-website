@@ -33,7 +33,7 @@ const Experience = () => {
           {/* <Environment preset="dawn" background> */}
           {/* <ambientLight intensity={0.5} /> */}
           {/* eslint-disable-next-line react/no-unknown-property */}
-          <fog attach="fog" args={["#D390F2", 15, 75]} />
+          <fog attach="fog" args={["#D390F2", 20, 80]} />
           <Sky sunPosition={[0, 50, -100]} />
           <Stars radius={50} depth={50} count={1000} factor={10} speed={3} />
         </Suspense>
