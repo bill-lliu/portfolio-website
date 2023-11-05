@@ -17,7 +17,7 @@ export const ScreenProvider = ({ children }) => {
   const Screens = {
     Home: {
       name: "Home",
-      position: [6, 0, 20],
+      position: [8, -4, 20],
       target: [0, 0, 0],
       portal: [0, 100, 0],
     },
