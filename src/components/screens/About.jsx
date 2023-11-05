@@ -1,23 +1,20 @@
 import { Affix, Center, ScrollArea, Stack, Text, Title } from "@mantine/core";
-import { useDisclosure } from "@mantine/hooks";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useScreenContext } from "../../contexts/ScreenContext";
 
 const About = () => {
   const { currentScreen } = useScreenContext();
-  const [opened, { open, close }] = useDisclosure(false);
+  const [opened, setOpen] = useState(false);
 
   useEffect(() => {
     if (currentScreen.name == "About") {
       setTimeout(() => {
-        open();
+        setOpen(true);
       }, 1500);
     } else {
-      setTimeout(() => {
-        close();
-      }, 200);
+      setOpen(false);
     }
-  }, [currentScreen, open, close]);
+  }, [currentScreen]);
 
   return (
     <>

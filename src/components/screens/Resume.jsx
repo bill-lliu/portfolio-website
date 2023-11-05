@@ -1,23 +1,22 @@
 import { Affix, Stack, Text, Title } from "@mantine/core";
-import { useDisclosure } from "@mantine/hooks";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useScreenContext } from "../../contexts/ScreenContext";
 
 const Resume = () => {
   const { currentScreen } = useScreenContext();
-  const [opened, { open, close }] = useDisclosure(false);
+  const [opened, setOpen] = useState(false);
 
   useEffect(() => {
     if (currentScreen.name == "Resume") {
       setTimeout(() => {
-        open();
+        setOpen(true);
       }, 1500);
     } else {
       setTimeout(() => {
-        close();
+        setOpen(false);
       }, 200);
     }
-  }, [currentScreen, open, close]);
+  }, [currentScreen]);
 
   return (
     <>
@@ -25,33 +24,18 @@ const Resume = () => {
         <Affix className="screen">
           <Stack gap={0} align="center">
             <Title className="title">Resume</Title>
-            <div className="contact_list">
+            <div className="screen_text">
               <Text>
                 I plan on building an interactive Resume here in the near
-                future, but until then, I hope a{" "}
+                future, but until then, here is a{" "}
                 <a
                   href="https://drive.google.com/file/d/143hGgYdllWrADoPRR9ain-MD1eEiIoke/view?usp=sharing"
                   target="_blank"
                   rel="noreferrer"
                 >
                   PDF version
-                </a>{" "}
-                will suffice.
-              </Text>
-              <br />
-              <Text>
-                {" "}
-                <i>
-                  &#40;and in the offchance the link doesn&apos;t work&#41;:
-                  <br />
-                  <a
-                    href="https://drive.google.com/file/d/143hGgYdllWrADoPRR9ain-MD1eEiIoke/view?usp=sharing"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    https://drive.google.com/file/d/143hGgYdllWrADoPRR9ain-MD1eEiIoke/view?usp=sharing
-                  </a>
-                </i>
+                </a>
+                !
               </Text>
             </div>
           </Stack>

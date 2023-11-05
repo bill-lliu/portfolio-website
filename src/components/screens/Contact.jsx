@@ -1,23 +1,20 @@
 import { Affix, Stack, Text, Title } from "@mantine/core";
-import { useDisclosure } from "@mantine/hooks";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useScreenContext } from "../../contexts/ScreenContext";
 
 const Contact = () => {
   const { currentScreen } = useScreenContext();
-  const [opened, { open, close }] = useDisclosure(false);
+  const [opened, setOpen] = useState(false);
 
   useEffect(() => {
     if (currentScreen.name == "Contact") {
       setTimeout(() => {
-        open();
+        setOpen(true);
       }, 1500);
     } else {
-      setTimeout(() => {
-        close();
-      }, 200);
+      setOpen(false);
     }
-  }, [currentScreen, open, close]);
+  }, [currentScreen]);
 
   return (
     <>
@@ -25,7 +22,7 @@ const Contact = () => {
         <Affix className="screen">
           <Stack gap={0} align="center">
             <Title className="title">Contact</Title>
-            <div className="contact_list">
+            <div className="screen_text">
               <Text>
                 Email:{" "}
                 <a

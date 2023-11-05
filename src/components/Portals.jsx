@@ -1,5 +1,6 @@
 /* eslint-disable react/no-unknown-property */
 import { RoundedBox, Text } from "@react-three/drei";
+import { useThree } from "@react-three/fiber";
 import { motion } from "framer-motion-3d";
 import * as THREE from "three";
 import { useScreenContext } from "../contexts/ScreenContext";
@@ -8,6 +9,7 @@ import { useScreenContext } from "../contexts/ScreenContext";
 
 const Portals = () => {
   const { Screens, currentScreen, setCurrentScreen } = useScreenContext();
+  const { viewport } = useThree();
 
   // each portal is a clickable square to jump the camera to that screen
   // eslint-disable-next-line react/prop-types
@@ -53,7 +55,7 @@ const Portals = () => {
     );
   };
 
-  console.log("currentScreen: ", currentScreen);
+  // console.log("currentScreen: ", currentScreen);
 
   // return all portals
   return (

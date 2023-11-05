@@ -1,23 +1,22 @@
 import { Affix, Stack, Text, Title } from "@mantine/core";
-import { useDisclosure } from "@mantine/hooks";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useScreenContext } from "../../contexts/ScreenContext";
 
 const Credits = () => {
   const { currentScreen } = useScreenContext();
-  const [opened, { open, close }] = useDisclosure(false);
+  const [opened, setOpen] = useState(false);
 
   useEffect(() => {
     if (currentScreen.name == "Credits") {
       setTimeout(() => {
-        open();
+        setOpen(true);
       }, 1500);
     } else {
       setTimeout(() => {
-        close();
+        setOpen(false);
       }, 200);
     }
-  }, [currentScreen, open, close]);
+  }, [currentScreen]);
 
   return (
     <>
@@ -25,7 +24,7 @@ const Credits = () => {
         <Affix className="screen">
           <Stack gap={0} align="center">
             <Title className="title">Credits</Title>
-            <div className="contact_list">
+            <div className="screen_text">
               <Text>
                 Development:
                 <br />

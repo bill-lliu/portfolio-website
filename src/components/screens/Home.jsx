@@ -1,25 +1,24 @@
 import { Affix, Center, Stack, Title } from "@mantine/core";
-import { useDisclosure } from "@mantine/hooks";
 import { useEffect, useState } from "react";
 import { useScreenContext } from "../../contexts/ScreenContext";
 
 const Home = () => {
   const { currentScreen } = useScreenContext();
-  const [opened, { open, close }] = useDisclosure(false);
+  const [opened, setOpen] = useState(false);
   const [showHelpText, setShowHelpText] = useState(false);
 
   // update screen position
   useEffect(() => {
     if (currentScreen.name == "Home") {
-      open();
+      setOpen(true);
       setTimeout(() => {
         setShowHelpText(true);
-      }, 2000);
+      }, 1500);
     } else {
-      close();
+      setOpen(false);
       setShowHelpText(false);
     }
-  }, [currentScreen, open, close]);
+  }, [currentScreen]);
 
   // instructions for movement that will appear
   const HelpText = () => {
@@ -70,7 +69,7 @@ const Home = () => {
         centered
         opened={opened}
         onClose={() => {
-          close();
+          setOpen(false);
           setShowHelpText(true);
         }}
         withCloseButton={false}
@@ -78,7 +77,7 @@ const Home = () => {
         <Title className="hero">Bill&apos;s Website</Title>
         <Button
           onClick={() => {
-            close();
+            setOpen(false);
             setShowHelpText(true);
           }}
           variant="gradient"
