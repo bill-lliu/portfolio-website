@@ -51,7 +51,7 @@ export const CameraController = () => {
       minDistance={12}
       maxDistance={40}
       minPolarAngle={Math.PI * (80 / 360)}
-      maxPolarAngle={Math.PI * (205 / 360)}
+      maxPolarAngle={Math.PI * (235 / 360)}
       // minAzimuthAngle={Math.PI * (-100 / 360)}
       // maxAzimuthAngle={Math.PI * (120 / 360)}
     />

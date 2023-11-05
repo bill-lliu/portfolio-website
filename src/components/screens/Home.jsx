@@ -1,4 +1,4 @@
-import { Affix, Button, Modal, Stack, Title } from "@mantine/core";
+import { Affix, Center, Stack, Title } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { useEffect, useState } from "react";
 import { useScreenContext } from "../../contexts/ScreenContext";
@@ -12,6 +12,9 @@ const Home = () => {
   useEffect(() => {
     if (currentScreen.name == "Home") {
       open();
+      setTimeout(() => {
+        setShowHelpText(true);
+      }, 2000);
     } else {
       close();
       setShowHelpText(false);
@@ -51,7 +54,18 @@ const Home = () => {
 
   return (
     <>
-      <Modal
+      {opened ? (
+        <Affix position={{ top: "6%", left: "0", right: "0" }}>
+          <Center>
+            <Title className="hero">Bill&apos;s Website</Title>
+          </Center>
+        </Affix>
+      ) : null}
+
+      {showHelpText == true ? <HelpText /> : null}
+
+      {/* old intro modal */}
+      {/* <Modal
         className={`intro ${opened == false ? "intro--disappear" : ""}`}
         centered
         opened={opened}
@@ -73,10 +87,7 @@ const Home = () => {
         >
           Explore
         </Button>
-        <br />
-        <br />
-      </Modal>
-      {showHelpText == true ? <HelpText /> : null}
+      </Modal> */}
     </>
   );
 };

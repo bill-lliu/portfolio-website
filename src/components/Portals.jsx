@@ -1,6 +1,5 @@
 /* eslint-disable react/no-unknown-property */
 import { RoundedBox, Text } from "@react-three/drei";
-import { useThree } from "@react-three/fiber";
 import { motion } from "framer-motion-3d";
 import * as THREE from "three";
 import { useScreenContext } from "../contexts/ScreenContext";
@@ -9,7 +8,6 @@ import { useScreenContext } from "../contexts/ScreenContext";
 
 const Portals = () => {
   const { Screens, currentScreen, setCurrentScreen } = useScreenContext();
-  const { viewport } = useThree();
 
   // each portal is a clickable square to jump the camera to that screen
   // eslint-disable-next-line react/prop-types
@@ -32,11 +30,11 @@ const Portals = () => {
             side={THREE.DoubleSide}
             transparent
             opacity={0.4}
-            // TODO: fix frustum culling because text disappears from a certain height
             frustumCulled={false}
           />
           <Text
-            position={[0, 0.151, 0]}
+            position={[0, 0, 0.151]}
+            // position={[0, 0.151, 0]}
             // rotation={[-Math.PI / 2, 0, 0]}
             maxWidth={3}
             fontSize={0.7}
@@ -55,15 +53,21 @@ const Portals = () => {
     );
   };
 
+  console.log("currentScreen: ", currentScreen);
+
   // return all portals
   return (
-    <group>
-      {Object.keys(Screens).map((view) => (
-        <motion.group key={view}>
-          <Portal view={view} />
-        </motion.group>
-      ))}
-    </group>
+    <>
+      {currentScreen.name === "Home" && (
+        <group>
+          {Object.keys(Screens).map((view) => (
+            <motion.group key={view}>
+              <Portal view={view} />
+            </motion.group>
+          ))}
+        </group>
+      )}
+    </>
   );
 };
 

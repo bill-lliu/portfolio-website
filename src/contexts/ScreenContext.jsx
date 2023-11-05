@@ -39,23 +39,23 @@ export const ScreenProvider = ({ children }) => {
     //  target: [0, 10, 0],
     //  portal: [0, 10, 1],
     // },
+    // Projects: {
+    //   name: "Projects",
+    //   position: [0, 10, 1],
+    //   target: [0, 10, 0],
+    //   portal: [0, 10, 1],
+    // },
     Timeline: {
       name: "Timeline",
       position: [0, 10, 1],
       target: [0, 10, 0],
-      portal: [0, 10, 1],
-    },
-    Projects: {
-      name: "Projects",
-      position: [0, 10, 1],
-      target: [0, 10, 0],
-      portal: [0, 10, 1],
+      portal: [0, 100, 1],
     },
     Services: {
       name: "Services",
       position: [0, 10, 1],
       target: [0, 10, 0],
-      portal: [0, 10, 1],
+      portal: [0, 100, 1],
     },
     Contact: {
       name: "Contact",
