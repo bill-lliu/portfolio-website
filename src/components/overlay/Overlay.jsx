@@ -1,10 +1,10 @@
-import { useScreenContext } from "../contexts/ScreenContext";
+import { useScreenContext } from "../../contexts/ScreenContext";
+import About from "../screens/About";
+import Contact from "../screens/Contact";
+import Credits from "../screens/Credits";
+import Home from "../screens/Home";
+import Resume from "../screens/Resume";
 import Navbar from "./Navbar";
-import About from "./screens/About";
-import Contact from "./screens/Contact";
-import Credits from "./screens/Credits";
-import Home from "./screens/Home";
-import Resume from "./screens/Resume";
 
 const Overlay = () => {
   const { started, currentScreen } = useScreenContext();

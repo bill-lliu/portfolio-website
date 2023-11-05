@@ -1,6 +1,6 @@
 import "./App.css";
-import Experience from "./components/Experience";
-import Overlay from "./components/Overlay";
+import Experience from "./components/experience/Experience";
+import Overlay from "./components/overlay/Overlay";
 
 function App() {
   // States of the screen, camera, and dark mode offloaded to context provider

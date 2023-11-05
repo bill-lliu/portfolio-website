@@ -1,6 +1,6 @@
 import { Affix, Burger, Button, Group, Menu, Stack } from "@mantine/core";
 import { useState } from "react";
-import { useScreenContext } from "../contexts/ScreenContext";
+import { useScreenContext } from "../../contexts/ScreenContext";
 
 // navbar menu component
 const Navbar = () => {

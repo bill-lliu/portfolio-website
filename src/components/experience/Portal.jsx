@@ -1,20 +1,25 @@
 /* eslint-disable react/no-unknown-property */
 import { Float, RoundedBox, Sparkles, Text } from "@react-three/drei";
 import * as THREE from "three";
-import { useScreenContext } from "../contexts/ScreenContext";
+import { useScreenContext } from "../../contexts/ScreenContext";
 
-const Portals = () => {
-  const { Screens, currentScreen, setCurrentScreen } = useScreenContext();
+// each portal is a clickable square to jump the camera to that screen
+// eslint-disable-next-line react/prop-types
+const Portal = ({ view, hovered, setHovered }) => {
+  const { Screens, setCurrentScreen } = useScreenContext();
 
-  // each portal is a clickable square to jump the camera to that screen
-  // eslint-disable-next-line react/prop-types
-  const Portal = ({ view }) => {
-    return (
-      <group>
-        <Float
-          speed={0.5}
-          rotationIntensity={0.5} // XYZ rotation intensity
-          floatingRange={[-0.1, 0.1]}
+  return (
+    <group>
+      <Float
+        speed={0.5}
+        rotationIntensity={0.5} // XYZ rotation intensity
+        floatingRange={[-0.1, 0.1]}
+      >
+        <group
+          onPointerOver={() => setHovered(true)}
+          onPointerOut={() => setHovered(false)}
+          //   onPointerOver={(e) => (e.stopPropagation(), setHovered(true))}
+          //   onPointerOut={(e) => setHovered(false)}
         >
           <RoundedBox
             key={view}
@@ -49,32 +54,17 @@ const Portals = () => {
               <div onPointerDown={(e) => e.stopPropagation()}>{view}</div>
             </Html> */}
           </RoundedBox>
-        </Float>
-        <Sparkles
-          position={Screens[view].portal}
-          count={15}
-          scale={5}
-          size={25}
-          speed={0.5}
-        />
-      </group>
-    );
-  };
-
-  // console.log("currentScreen: ", currentScreen);
-
-  // return all portals
-  return (
-    <>
-      {currentScreen.name === "Home" && (
-        <group>
-          {Object.keys(Screens).map((view) => (
-            <Portal key={view} view={view} />
-          ))}
         </group>
-      )}
-    </>
+      </Float>
+      <Sparkles
+        position={Screens[view].portal}
+        count={18}
+        scale={6}
+        size={24}
+        speed={0.6}
+      />
+    </group>
   );
 };
 
-export default Portals;
+export default Portal;

@@ -1,6 +1,6 @@
 import { Button } from "@mantine/core";
 import { Loader, useProgress } from "@react-three/drei";
-import { useScreenContext } from "../contexts/ScreenContext";
+import { useScreenContext } from "../../contexts/ScreenContext";
 
 const LoadingScreen = () => {
   const { started, setStarted } = useScreenContext();

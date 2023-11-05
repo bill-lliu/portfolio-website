@@ -1,11 +1,11 @@
 import { PositionalAudio, Sky, Stars } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
-import CameraController from "../contexts/CameraController";
-import { useScreenContext } from "../contexts/ScreenContext";
-import LoadingScreen from "./LoadingScreen";
+import CameraController from "../../contexts/CameraController";
+import { useScreenContext } from "../../contexts/ScreenContext";
+import LoadingScreen from "../overlay/LoadingScreen";
 import Portals from "./Portals";
-import Scene from "./models/Scene";
+import Scene from "./Scene";
 
 const Experience = () => {
   const { started } = useScreenContext();
