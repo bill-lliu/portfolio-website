@@ -1,15 +1,10 @@
 /* eslint-disable react/no-unknown-property */
-import { RoundedBox, Text } from "@react-three/drei";
-import { useThree } from "@react-three/fiber";
-import { motion } from "framer-motion-3d";
+import { Float, RoundedBox, Text } from "@react-three/drei";
 import * as THREE from "three";
 import { useScreenContext } from "../contexts/ScreenContext";
 
-// TODO: fix font sourcing
-
 const Portals = () => {
   const { Screens, currentScreen, setCurrentScreen } = useScreenContext();
-  const { viewport } = useThree();
 
   // each portal is a clickable square to jump the camera to that screen
   // eslint-disable-next-line react/prop-types
@@ -63,9 +58,9 @@ const Portals = () => {
       {currentScreen.name === "Home" && (
         <group>
           {Object.keys(Screens).map((view) => (
-            <motion.group key={view}>
+            <Float key={view}>
               <Portal view={view} />
-            </motion.group>
+            </Float>
           ))}
         </group>
       )}
