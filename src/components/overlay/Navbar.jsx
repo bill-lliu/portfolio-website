@@ -1,11 +1,29 @@
-import { Affix, Burger, Button, Group, Menu, Stack } from "@mantine/core";
-import { useState } from "react";
+import {
+  Affix,
+  Burger,
+  Button,
+  Group,
+  Menu,
+  Stack,
+  Tooltip,
+} from "@mantine/core";
+import { useEffect, useState } from "react";
 import { useScreenContext } from "../../contexts/ScreenContext";
 
 // navbar menu component
 const Navbar = () => {
   const { Screens, currentScreen, setCurrentScreen } = useScreenContext();
   const [menuOpened, setMenuOpen] = useState(false);
+  const [showTooltip, setShowTooltip] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setShowTooltip(true);
+      setTimeout(() => {
+        setShowTooltip(false);
+      }, 8000);
+    }, 4000);
+  }, []);
 
   return (
     <>
@@ -44,15 +62,30 @@ const Navbar = () => {
           hiddenFrom="sm"
         >
           <Menu.Target>
-            <Burger
-              opened={menuOpened}
-              onClick={() => setMenuOpen(!menuOpened)}
-              color="violet"
-              transitionDuration={400}
-              transitionTimingFunction="ease"
-              aria-label="Toggle navigation"
-              hiddenFrom="sm"
-            />
+            <Tooltip
+              label="try using the menu!"
+              opened={showTooltip}
+              position="right"
+              offset={20}
+              withArrow
+              arrowSize={16}
+              radius={8}
+              color="#E285E5"
+              transitionProps={{
+                transition: "slide-left",
+                duration: 2000,
+              }}
+            >
+              <Burger
+                opened={menuOpened}
+                onClick={() => setMenuOpen(!menuOpened)}
+                color="#1E0540"
+                transitionDuration={400}
+                transitionTimingFunction="ease"
+                aria-label="Toggle navigation"
+                hiddenFrom="sm"
+              />
+            </Tooltip>
           </Menu.Target>
           <Menu.Dropdown
             style={{ background: "none", border: "none" }}
