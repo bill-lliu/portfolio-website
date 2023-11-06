@@ -5,8 +5,6 @@ import Portal from "./Portal";
 const Portals = () => {
   const { Screens, currentScreen } = useScreenContext();
 
-  // console.log("currentScreen: ", currentScreen);
-
   // return all portals
   return (
     <>

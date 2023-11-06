@@ -98,7 +98,7 @@ const Credits = () => {
                   Cloud Station
                 </a>
                 <br />
-                Web model rebuilt/retextured by{" "}
+                Model rebuilt/retextured for web by{" "}
                 <a
                   href="https://www.linkedin.com/in/bill-lliu/"
                   target="_blank"
@@ -195,13 +195,22 @@ const Credits = () => {
               <Text>
                 License:
                 <br />
-                All works under{" "}
+                All works used under{" "}
                 <a
                   href="https://creativecommons.org/licenses/by/3.0/"
                   target="_blank"
                   rel="noreferrer"
                 >
                   CC-BY
+                </a>
+                <br />
+                Webside under{" "}
+                <a
+                  href="https://www.gnu.org/licenses/gpl-3.0"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  &copy; GNU GPL v3.0
                 </a>
               </Text>
             </div>

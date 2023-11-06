@@ -13,7 +13,7 @@ const Experience = () => {
   // Canvas used to set up three.js's scene, camera, and renderer
   return (
     <>
-      <Canvas shadows camera={{ position: [6, 0, 20], fov: 30, near: 1.2 }}>
+      <Canvas shadows camera={{ position: [6, 0, 20], fov: 30, near: 2 }}>
         {/* eslint-disable-next-line react/no-unknown-property */}
         <group position={[-4, 4.2, -4]}>
           {started && (
@@ -27,6 +27,9 @@ const Experience = () => {
           )}
         </group>
         <CameraController />
+        {/* <Grid cellSize={1} infiniteGrid={true} />
+        <Box args={[0.5, 0.5, 0.5]} position={[0, 2, 1]} />
+        <Box args={[0.5, 0.5, 0.5]} position={[2, 0, -2]} /> */}
         <Suspense fallback={null}>
           <Scene position-x={0} position-y={-4} position-z={2} />
           <Portals />

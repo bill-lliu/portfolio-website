@@ -3,6 +3,7 @@ import About from "../screens/About";
 import Contact from "../screens/Contact";
 import Credits from "../screens/Credits";
 import Home from "../screens/Home";
+import Projects from "../screens/Projects";
 import Resume from "../screens/Resume";
 import Navbar from "./Navbar";
 
@@ -19,6 +20,7 @@ const Overlay = () => {
             {currentScreen.name == "Home" ? <Home /> : null}
             {currentScreen.name == "About" ? <About /> : null}
             {currentScreen.name == "Resume" ? <Resume /> : null}
+            {currentScreen.name == "Projects" ? <Projects /> : null}
             {currentScreen.name == "Contact" ? <Contact /> : null}
             {currentScreen.name == "Credits" ? <Credits /> : null}
           </div>

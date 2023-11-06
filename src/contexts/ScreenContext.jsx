@@ -10,28 +10,34 @@ export const useScreenContext = () => {
 // Provider stores global states for the app
 // eslint-disable-next-line react/prop-types
 export const ScreenProvider = ({ children }) => {
-  // started state to track first user interaction
+  // started boolean to track first user interaction
   const [started, setStarted] = useState(false);
 
-  // screen state is a screen object
+  // screen object stores position, target, and portal coordinates for each screen
   const Screens = {
     Home: {
       name: "Home",
-      position: [8, -4, 20],
-      target: [0, 0, 0],
+      position: [6, -4, 20],
+      target: [0.5, 0, 0],
       portal: [0, 100, 0],
     },
     About: {
       name: "About",
       position: [0.4, -0.8, 7.2],
       target: [0.2, -2.2, 3.2],
-      portal: [0.2, -2.2, 5],
+      portal: [0.2, -1.8, 5],
     },
     Resume: {
       name: "Resume",
+      position: [0, 1, 1],
+      target: [2, 0, -2],
+      portal: [2.8, 0.4, -0.4],
+    },
+    Projects: {
+      name: "Projects",
       position: [-4, 4.2, 2],
       target: [-4, 4.2, -4],
-      portal: [-4, 4.2, -2],
+      portal: [-4, 4.2, -2.4],
     },
     // Experience: {
     //   name: "Experience",
@@ -39,18 +45,12 @@ export const ScreenProvider = ({ children }) => {
     //  target: [0, 10, 0],
     //  portal: [0, 10, 1],
     // },
-    // Projects: {
-    //   name: "Projects",
+    // Timeline: {
+    //   name: "Timeline",
     //   position: [0, 10, 1],
     //   target: [0, 10, 0],
-    //   portal: [0, 10, 1],
+    //   portal: [0, 100, 1],
     // },
-    Timeline: {
-      name: "Timeline",
-      position: [0, 10, 1],
-      target: [0, 10, 0],
-      portal: [0, 100, 1],
-    },
     Services: {
       name: "Services",
       position: [0, 10, 1],
@@ -61,7 +61,7 @@ export const ScreenProvider = ({ children }) => {
       name: "Contact",
       position: [2.8, 3.4, -2],
       target: [2.8, 4.2, -8],
-      portal: [2.8, 4.2, -6.5],
+      portal: [2.8, 4.2, -6.8],
     },
     // Socials: {
     //   name: "Socials",
@@ -73,12 +73,12 @@ export const ScreenProvider = ({ children }) => {
       name: "Credits",
       position: [9, 0, 30],
       target: [0, 0, 0],
-      portal: [-2, 6, -10],
+      portal: [-1, 7, -10],
     },
   };
   const [currentScreen, setCurrentScreen] = useState(Screens.Home);
 
-  // camera state is a string
+  // camera state to determine how camera behaves
   const CameraModes = {
     FREE: "FREE",
     LIMITED: "LIMITED",
@@ -86,7 +86,7 @@ export const ScreenProvider = ({ children }) => {
   };
   const [currentCameraMode, setCurrentCameraMode] = useState(CameraModes.FREE);
 
-  // audio state is a boolean
+  // audio state of whether to play audio
   const [playAudio, setPlayAudio] = useState(true);
   // start playing audio on first user interaction
   // useEffect(() => {

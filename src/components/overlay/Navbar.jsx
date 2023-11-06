@@ -38,9 +38,7 @@ const Navbar = () => {
               color={currentScreen.name == view ? "white" : "#F2EFBD"}
               variant={currentScreen.name == view ? "gradient" : "light"}
               gradient={{ from: "purple", to: "violet" }}
-              disabled={
-                view == "Timeline" || view == "Services" || view == "Projects"
-              }
+              disabled={view == "Timeline" || view == "Services"}
               size="md"
             >
               <h4>{view}</h4>
@@ -100,11 +98,7 @@ const Navbar = () => {
                   color={currentScreen.name == view ? "white" : "#F2EFBD"}
                   variant={currentScreen.name == view ? "gradient" : "light"}
                   gradient={{ from: "violet", to: "grape" }}
-                  disabled={
-                    view == "Timeline" ||
-                    view == "Services" ||
-                    view == "Projects"
-                  }
+                  disabled={view == "Timeline" || view == "Services"}
                   size="md"
                 >
                   <h4>{view}</h4>

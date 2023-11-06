@@ -2,12 +2,12 @@ import { Affix, Stack, Text, Title } from "@mantine/core";
 import { useEffect, useState } from "react";
 import { useScreenContext } from "../../contexts/ScreenContext";
 
-const Resume = () => {
+const Projects = () => {
   const { currentScreen } = useScreenContext();
   const [opened, setOpen] = useState(false);
 
   useEffect(() => {
-    if (currentScreen.name == "Resume") {
+    if (currentScreen.name == "Projects") {
       setTimeout(() => {
         setOpen(true);
       }, 1500);
@@ -23,19 +23,30 @@ const Resume = () => {
       {opened ? (
         <Affix className="screen">
           <Stack gap={0} align="center">
-            <Title className="title">Resume</Title>
+            <Title className="title">Projects</Title>
             <div className="screen_text">
               <Text>
-                <br />I plan on building an interactive Resume here in the near
-                future, but until then, here is a{" "}
+                <br />
+                I plan on building an interactive projects showcase here soon,
+                but until then:
+                <br />
+                GitHub:{" "}
                 <a
-                  href="https://drive.google.com/file/d/143hGgYdllWrADoPRR9ain-MD1eEiIoke/view?usp=sharing"
+                  href="https://github.com/bill-lliu"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  PDF version
+                  github.com/bill-lliu
                 </a>
-                !
+                <br />
+                Devpost:{" "}
+                <a
+                  href="https://devpost.com/bill-lliu"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  devpost.com/bill-lliu
+                </a>{" "}
               </Text>
             </div>
           </Stack>
@@ -45,4 +56,4 @@ const Resume = () => {
   );
 };
 
-export default Resume;
+export default Projects;

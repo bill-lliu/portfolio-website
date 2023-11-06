@@ -18,7 +18,7 @@ const Scene = (props) => {
   const { actions } = useAnimations(animations, group);
 
   useEffect(() => {
-    actions["Take 001"].reset().warp(1.5, 0.2, 5).play();
+    actions["Take 001"].reset().warp(2, 0.2, 5).play();
   }, [actions]);
 
   return (

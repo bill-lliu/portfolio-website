@@ -6,6 +6,7 @@ import App from "./App.jsx";
 import { ScreenProvider } from "./contexts/ScreenContext.jsx";
 import "./index.css";
 
+// Copyright © 2023 by Siyi Bill Liu under GNU General Public Liscence v3.0
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <ScreenProvider>
