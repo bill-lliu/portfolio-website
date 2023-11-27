@@ -29,7 +29,7 @@ const Resume = () => {
                 <br />I plan on building an interactive Resume here in the near
                 future, but until then, here is a{" "}
                 <a
-                  href="https://drive.google.com/file/d/143hGgYdllWrADoPRR9ain-MD1eEiIoke/view?usp=sharing"
+                  href="https://drive.google.com/file/d/16-VbQR61QQMYLCNNk_xKE8U3M0shY1Wv/view?usp=sharing"
                   target="_blank"
                   rel="noreferrer"
                 >

@@ -28,8 +28,8 @@ const Experience = () => {
         </group>
         <CameraController />
         {/* <Grid cellSize={1} infiniteGrid={true} />
-        <Box args={[0.5, 0.5, 0.5]} position={[0, 2, 1]} />
-        <Box args={[0.5, 0.5, 0.5]} position={[2, 0, -2]} /> */}
+        <Box args={[1, 1, 1]} position={[1, 2, 2]} />
+        <Box args={[1, 1, 1]} position={[2, 0.4, -2]} material-color="red" /> */}
         <Suspense fallback={null}>
           <Scene position-x={0} position-y={-4} position-z={2} />
           <Portals />

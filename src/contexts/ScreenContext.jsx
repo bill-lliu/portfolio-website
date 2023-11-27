@@ -29,8 +29,8 @@ export const ScreenProvider = ({ children }) => {
     },
     Resume: {
       name: "Resume",
-      position: [0, 1, 1],
-      target: [2, 0, -2],
+      position: [1, 3, 4],
+      target: [2, 0.4, -2],
       portal: [2.8, 0.4, -0.4],
     },
     Projects: {
