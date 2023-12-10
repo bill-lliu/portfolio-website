@@ -4,6 +4,7 @@ import { Suspense } from "react";
 import CameraController from "../../contexts/CameraController";
 import { useScreenContext } from "../../contexts/ScreenContext";
 import LoadingScreen from "../overlay/LoadingScreen";
+import Clouds from "./Clouds";
 import Portals from "./Portals";
 import Scene from "./Scene";
 
@@ -32,11 +33,13 @@ const Experience = () => {
         <Box args={[1, 1, 1]} position={[2, 0.4, -2]} material-color="red" /> */}
         <Suspense fallback={null}>
           <Scene position-x={0} position-y={-4} position-z={2} />
+          {/* <Clouds /> */}
+          <Clouds />
           <Portals />
           {/* <Environment preset="dawn" background> */}
           {/* <ambientLight intensity={0.5} /> */}
           {/* eslint-disable-next-line react/no-unknown-property */}
-          <fog attach="fog" args={["#D390F2", 20, 80]} />
+          <fog attach="fog" args={["#D390F2", 20, 100]} />
           <Sky sunPosition={[0, 50, -100]} />
           <Stars radius={50} depth={50} count={1000} factor={10} speed={3} />
         </Suspense>
