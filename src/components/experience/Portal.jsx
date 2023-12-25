@@ -31,7 +31,7 @@ const Portal = ({ view }) => {
             position={Screens[view].portal}
             // rotation={[Math.PI / 2, 0, 0]}
             // args={[1.5, 1.5, 0.3]}
-            args={[2.5, 2.5, 0.3]}
+            args={hovered ? [2.7, 1.6, 0.3] : [2.4, 1.3, 0.3]}
             radius={hovered ? 0.3 : 0.15}
             onClick={() => {
               console.log(view);
@@ -49,7 +49,7 @@ const Portal = ({ view }) => {
               // position={[0, 0.151, 0]}
               // rotation={[-Math.PI / 2, 0, 0]}
               maxWidth={3}
-              fontSize={0.6}
+              fontSize={hovered ? 0.63 : 0.6}
               font={"./fonts/Cabin_Sketch/CabinSketch-Bold.ttf"}
               color={hovered ? "#3D0773" : "#800080"}
             >
