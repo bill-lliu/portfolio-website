@@ -234,6 +234,12 @@ button:hover {
   transition: all 0.5s;
   animation: fadeUp 1s ease-in-out 1s forwards;
   opacity: 0;
+  z-index: 1002;
+}
+
+/* explore button before progress bar finishes loading */
+.explore--before {
+  z-index: 0;
 }
 
 /* text colour changes when hovered */

@@ -44,9 +44,9 @@ const LoadingScreen = () => {
           marginLeft: "-60px",
           top: "50%",
           marginTop: "-20px",
-          zIndex: 1002,
         }}
-        className="explore"
+        // className="explore"
+        className={`explore ${progress < 100 ? "explore--before" : ""}`}
         onClick={() => {
           setStarted(true);
         }}
