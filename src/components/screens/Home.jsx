@@ -31,6 +31,7 @@ const Home = () => {
           left: "50%",
           marginLeft: "-200px",
           bottom: "15%",
+          pointerEvents: "none",
         }}
         zIndex={1}
       >
@@ -54,7 +55,10 @@ const Home = () => {
   return (
     <>
       {opened ? (
-        <Affix position={{ top: "6%", left: "0", right: "0" }}>
+        <Affix
+          position={{ top: "6%", left: "0", right: "0" }}
+          style={{ pointerEvents: "none" }}
+        >
           <Center>
             <Title className="hero">Bill&apos;s Website</Title>
           </Center>
